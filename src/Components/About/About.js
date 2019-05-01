@@ -1,14 +1,19 @@
 import React from "react";
 import LinkButton from "../General";
+import ReactTypingEffect from "react-typing-effect";
 
 function About() {
   return (
-    <div>
+    <div className="mainContainer">
       <h1>About</h1>
       <div className="quote">
-        With vision and determination, nothing is impossible
+        <ReactTypingEffect
+          speed="100"
+          eraseDelay="99999999999999"
+          text="  With vision and determination nothing is impossible"
+        />
       </div>
-      <div>
+      <div id="aboutText">
         <p>
           As a true{" "}
           <a
@@ -47,7 +52,7 @@ function About() {
           even sewing that you have on your mind, let me know!
         </p>
       </div>
-      <LinkButton url="Contact">Let's talk!</LinkButton>
+      <LinkButton url="Contact" text="Let' s talk!" id="linkButtonToContact" />
     </div>
   );
 }

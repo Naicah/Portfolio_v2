@@ -7,12 +7,17 @@
   --color--bg: white;
 
   --font-stack-fancy: "Dancing Script", cursive;
-  --font-stack-normal: "Krub", sans-serif;
+  --font-stack-normal: "Krub", sans-serif; /* font-family: "KoHo", sans-serif; */ /* font-family: "Rajdhani", sans-serif; */
 
   --font-size-xl: 7em;
   --font-size-l: ;
   --font-size-m: 1.4em;
   --font-size-s: 1em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -30,91 +35,41 @@ h1 {
   font-size: var(--font-size-xl);
   font-family: var(--font-stack-fancy);
   text-align: center;
+  margin-bottom: 0.3em;
 }
 p {
   color: var(--color-dark-2);
   font-size: var(--font-size-s);
   font-family: var(--font-stack-normal);
-  /* font-family: "KoHo", sans-serif; */
-  /* font-family: "Rajdhani", sans-serif; */
 }
+
+.mainContainer {
+  max-width: 80vw;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+}
+
 .quote {
   color: var(--color-dark-1);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-normal);
+  text-align: center;
+  max-width: 40vw;
+  margin: 0 auto 2em auto;
 }
 
-.text-f-dancingScript {
-  font-family: "Dancing Script", cursive;
+#aboutText {
+  margin-bottom: 2em;
 }
-.text-f-amaticSC {
-  font-family: "Amatic SC", cursive;
+#aboutText p {
+  margin-bottom: 0.5em;
 }
-.text-f-satisfy {
-  font-family: "Satisfy", cursive;
-}
-.text-f-shadowsIntoTheLightTwo {
-  font-family: "Shadows Into Light Two", cursive;
-}
-.text-f-rochester {
-  font-family: "Rochester", cursive;
-}
-.text-f-waitingForTheSunrise {
-  font-family: "Waiting for the Sunrise", cursive;
-}
-.text-f-krub {
-  font-family: "Krub", sans-serif;
-}
-.text-f-openSansCondensed {
-  font-family: "Open Sans Condensed", sans-serif;
-}
-.text-f-koHo {
-  font-family: "KoHo", sans-serif;
-}
-.text-f-rajdhani {
-  font-family: "Rajdhani", sans-serif;
-}
-.text-f-econimica {
-  font-family: "Economica", sans-serif;
-}
-.text-f-wireOne {
-  font-family: "Wire One", sans-serif;
-}
-.text-f-bubblerOne {
-  font-family: "Bubbler One", sans-serif;
-}
-.text-f-textMeOne {
-  font-family: "Text Me One", sans-serif;
-}
-.text-f-shadowsIntoLight {
-  font-family: "Shadows Into Light", cursive;
-}
-.text-f-reenieBeanie {
-  font-family: "Reenie Beanie", cursive;
-}
-.text-f-calligraffitti {
-  font-family: "Calligraffitti", cursive;
-}
-.text-f-lovedByTheKing {
-  font-family: "Loved by the King", cursive;
-}
-.text-f-theGirlNextDoor {
-  font-family: "The Girl Next Door", cursive;
-}
-.text-f-laBelleAurore {
-  font-family: "La Belle Aurore", cursive;
-}
-.text-f-overTheRainbow {
-  font-family: "Over the Rainbow", cursive;
-}
-.text-f-oregano {
-  font-family: "Oregano", cursive;
-}
-.text-f-pompiere {
-  font-family: "Pompiere", cursive;
+#aboutText p a {
+  color: var(--color-dark-1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#linkButtonToContact {
+  max-width: 50%;
+  float: right;
+  margin-bottom: 2em;
 }
