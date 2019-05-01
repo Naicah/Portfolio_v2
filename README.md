@@ -1,3 +1,10 @@
+# Portfolio version 2
+
+Portfolio created as an individual project at Front End Developer education at [KYH](https://kyh.se/utbildningar/front-end-developer/) in Stockholm, Sweden. <br>
+Requirements: React and API
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
