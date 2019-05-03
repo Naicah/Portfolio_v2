@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+// Style sheets
 import "./App.css";
+import "./Components/About/about.css";
 
 // App components
 import Home from "./Components/Home";
