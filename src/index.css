@@ -1,4 +1,9 @@
+/* ================================================ */
+/*                    VARIABLES                     */
+/* ================================================ */
+
 :root {
+  /* ================= COLORS ====================== */
   --color-light-1: #f5f5ef;
   --color-dark-1: #32522a;
   --color-dark-2: #b15f76;
@@ -6,14 +11,23 @@
   --color-light-2: #e8d0d4;
   --color--bg: white;
 
+  /* =============== FONT STACKS ================== */
   --font-stack-fancy: "Dancing Script", cursive;
   --font-stack-normal: "Krub", sans-serif; /* font-family: "KoHo", sans-serif; */ /* font-family: "Rajdhani", sans-serif; */
 
-  --font-size-xl: 7em;
-  --font-size-l: ;
-  --font-size-m: 1.4em;
+  /* =============== FONT SIZES =================== */
   --font-size-s: 1em;
+  --font-size-m: 1.4em;
+  --font-size-l: 3em;
+  --font-size-xl: 7em;
+
+  /* ============ BACKGROUND IMAGES =============== */
+  --background-img: url("./Media/blooming_blossom.jpg");
 }
+
+/* ================================================ */
+/*                     GENERAL                      */
+/* ================================================ */
 
 * {
   box-sizing: border-box;
@@ -30,6 +44,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* =================== TEXT ======================= */
 h1 {
   color: var(--color-accent);
   font-size: var(--font-size-xl);
@@ -43,6 +58,7 @@ p {
   font-family: var(--font-stack-normal);
 }
 
+/* ================ CONTAINERS ===================== */
 .mainContainer {
   max-width: 80vw;
   margin: 0 auto;
