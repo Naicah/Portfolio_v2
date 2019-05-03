@@ -4,11 +4,11 @@
 
 :root {
   /* ================= COLORS ====================== */
-  --color-light-1: #f5f5ef;
-  --color-dark-1: #32522a;
-  --color-dark-2: #b15f76;
-  --color-accent: #c78a95;
-  --color-light-2: #e8d0d4;
+  --color-light-1: #f5f5ef; /* rgba: 245,245,239,1 */
+  --color-dark-1: #32522a; /* rgba: 50, 82, 42, 1 */
+  --color-dark-2: #b15f76; /* rgba: 177,95,118,1 */
+  --color-accent: #c78a95; /* rgba: 199,138,149,1 */
+  --color-light-2: #e8d0d4; /* rgba: 232,208,212,1 */
   --color--bg: white;
 
   /* =============== FONT STACKS ================== */
@@ -18,14 +18,15 @@
   /* =============== FONT SIZES =================== */
   --font-size-s: 1em;
   --font-size-m: 1.4em;
-  --font-size-l: 3em;
-  --font-size-xl: 7em;
+  --font-size-l: 2em;
+  --font-size-xl: 6em;
 
   /* ============ BACKGROUND IMAGES =============== */
   --background-img: url("./Media/blooming_blossom.jpg");
 
   /* ============ BACKGROUND LOGOS =============== */
   --logo: url("./Media/logo.png");
+  --webpage-img: url("./Media/webpage.png");
 }
 
 /* ================================================ */
@@ -55,6 +56,15 @@ h1 {
   text-align: center;
   margin-bottom: 0.3em;
 }
+
+h3 {
+  color: var(--color-dark-2);
+  font-size: var(--font-size-l);
+  font-family: var(--font-stack-normal);
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+
 p {
   color: var(--color-dark-2);
   font-size: var(--font-size-s);
@@ -66,4 +76,34 @@ p {
   max-width: 80vw;
   margin: 0 auto;
   /* border: 1px solid black; */
+}
+
+/* ================ TOOLTIPS ===================== */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  background-color: var(--color-dark-1);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

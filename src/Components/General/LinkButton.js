@@ -26,7 +26,9 @@ export const LinkButtonDiv = styled.div`
 function LinkButton({ url, text, id }) {
   return (
     <LinkButtonDiv id={id}>
-      <a href={url}>{text}</a>
+      <a href={url} target="blank">
+        {text}
+      </a>
     </LinkButtonDiv>
   );
 }
