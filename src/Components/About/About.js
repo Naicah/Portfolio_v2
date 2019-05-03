@@ -10,7 +10,7 @@ function About() {
         <ReactTypingEffect
           speed="100"
           eraseDelay="99999999999999"
-          text="  With vision and determination nothing is impossible"
+          text="With vision and determination nothing is impossible"
         />
       </div>
       <div id="aboutText">

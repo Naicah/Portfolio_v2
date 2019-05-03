@@ -48,28 +48,3 @@ p {
   margin: 0 auto;
   /* border: 1px solid black; */
 }
-
-.quote {
-  color: var(--color-dark-1);
-  font-size: var(--font-size-m);
-  font-family: var(--font-stack-normal);
-  text-align: center;
-  max-width: 40vw;
-  margin: 0 auto 2em auto;
-}
-
-#aboutText {
-  margin-bottom: 2em;
-}
-#aboutText p {
-  margin-bottom: 0.5em;
-}
-#aboutText p a {
-  color: var(--color-dark-1);
-}
-
-#linkButtonToContact {
-  max-width: 50%;
-  float: right;
-  margin-bottom: 2em;
-}
