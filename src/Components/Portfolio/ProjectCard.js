@@ -23,8 +23,19 @@ function ProjectCard({
     linkIcons.push(<LinkIcon linkType={link.linkType} url={link.url} />);
   });
 
-  return (
-    <ProjectCardDiv id={id}>
+  let bgImg = require("../../Media/" + String(img));
+
+  let flipped = false;
+  //   let flipped = true;
+
+  function flipCard() {
+    console.log(flipped);
+    flipped = !flipped;
+  }
+
+  let front = [];
+  front.push(
+    <div className="projectCardBack">
       <div>
         <h3>{name}</h3>
         <p>{description}</p>
@@ -41,6 +52,30 @@ function ProjectCard({
           </div>
         </div>
       </div>
+    </div>
+  );
+
+  let back = [];
+  back.push(
+    <div
+      className="projectCardFront"
+      style={{ backgroundImage: "url(" + bgImg + ")" }}
+    />
+  );
+
+  let show;
+
+  switch (flipped) {
+    case true:
+      show = back;
+      break;
+    default:
+      show = front;
+  }
+
+  return (
+    <ProjectCardDiv id={id + "projectCardDiv"} onclick={flipCard}>
+      {show}
     </ProjectCardDiv>
   );
 }
