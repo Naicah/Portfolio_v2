@@ -8,6 +8,7 @@ import "./Components/About/about.css";
 // App components
 import Home from "./Components/Home";
 import About from "./Components/About";
+import Portfolio from "./Components/Portfolio";
 
 function App() {
   return (
@@ -16,9 +17,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" render={() => <About title="About" />} />
+          <Route
+            path="/portfolio"
+            render={() => <Portfolio title="Portfolio" />}
+          />
           {/* <Route exact path="/teachers" component={ Teachers } />
         <Route path="/teachers/:topic/:name" component={ Featured } />
-        <Route path="/courses" component={ Courses } />
         <Route component={ NotFound } /> */}
         </Switch>
       </div>

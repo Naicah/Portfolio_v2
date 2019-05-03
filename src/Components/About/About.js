@@ -1,5 +1,5 @@
 import React from "react";
-import LinkButton from "../General";
+import { LinkButton } from "../General";
 import ReactTypingEffect from "react-typing-effect";
 
 function About() {

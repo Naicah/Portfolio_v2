@@ -1,3 +1,4 @@
 import LinkButton from "./LinkButton";
+import LinkIcon from "./LinkIcon";
 
-export default LinkButton;
+export { LinkButton, LinkIcon };
