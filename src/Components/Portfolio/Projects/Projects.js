@@ -20,7 +20,6 @@ const projects = [
     description:
       "Web based application to book rooms, see attendance and ETA for attending",
     links: [
-      { linkType: "webpage", url: "" },
       { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
     ],
     techniques: ["React", "Firebase"]

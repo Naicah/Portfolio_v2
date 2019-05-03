@@ -16,31 +16,40 @@ export const ProjectCardDiv = styled.div`
   -moz-box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
   box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
 
+  transition: transform 0.2s;
+
   :hover {
     cursor: pointer;
-    background-color: var(--color-light-1);
+    transform: scale(1.05);
   }
-  div {
+  div div {
     display: flex;
     justify-content: space-between;
   }
 
+  #techniqueIcons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.3em;
+  }
+
   #projectLinks {
     display: flex;
-    justify-content: space-around;
-
-    width: 50%;
+    justify-content: space-between;
+    max-width: 50%;
   }
 
-  #learnMoreContainer {
-    display: flex;
-    justify-content: space-around;
-  }
   #learnMoreBtn {
     color: var(--color-dark-1);
     text-decoration: none;
     padding: 0.3em;
     border: 1.5px solid var(--color-dark-1);
-    max-height: 2.3em;
+    max-height: 2.2em;
+    margin-top: 0.6em;
+    :hover {
+      color: var(--color-light-1);
+      background-color: var(--color-dark-1);
+      border: none;
+    }
   }
 `;

@@ -25,15 +25,20 @@ function ProjectCard({
 
   return (
     <ProjectCardDiv id={id}>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <div>{techniqueIcons}</div>
       <div>
-        <div id="projectLinks">{linkIcons}</div>
-        <div id="learnMoreContainer">
-          <a id="learnMoreBtn" href={projectPage}>
-            Learn more
-          </a>
+        <h3>{name}</h3>
+        <p>{description}</p>
+      </div>
+
+      <div>
+        <div id="techniqueIcons">{techniqueIcons}</div>
+        <div>
+          <div id="projectLinks">{linkIcons}</div>
+          <div id="learnMoreContainer">
+            <a id="learnMoreBtn" href={projectPage}>
+              Learn more
+            </a>
+          </div>
         </div>
       </div>
     </ProjectCardDiv>

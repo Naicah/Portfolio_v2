@@ -16,6 +16,7 @@
   --font-stack-normal: "Krub", sans-serif; /* font-family: "KoHo", sans-serif; */ /* font-family: "Rajdhani", sans-serif; */
 
   /* =============== FONT SIZES =================== */
+  --font-size-xs: 0.8em;
   --font-size-s: 1em;
   --font-size-m: 1.4em;
   --font-size-l: 2em;
@@ -97,6 +98,7 @@ p {
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
+  font-size: var(--font-size-xs);
 
   /* Position the tooltip text - see examples below! */
   position: absolute;
