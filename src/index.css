@@ -23,6 +23,9 @@
 
   /* ============ BACKGROUND IMAGES =============== */
   --background-img: url("./Media/blooming_blossom.jpg");
+
+  /* ============ BACKGROUND LOGOS =============== */
+  --logo: url("./Media/logo.png");
 }
 
 /* ================================================ */

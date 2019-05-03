@@ -9,7 +9,6 @@ export const HomeDiv = styled.div`
   background-attachment: fixed;
   background-position: -60vw 0vw;
   background-size: auto 100vh;
-  border: 1px solid white;
 `;
 
 function Home() {
