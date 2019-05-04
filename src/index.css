@@ -21,7 +21,8 @@
   --font-size-s: 1em;
   --font-size-m: 1.4em;
   --font-size-l: 2em;
-  --font-size-xl: 6em;
+  --font-size-xl: 4em;
+  --font-size-xxl: 6em;
 
   /* ============ BACKGROUND IMAGES =============== */
   --background-img: url("./Media/blooming_blossom.jpg");

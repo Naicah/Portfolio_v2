@@ -5,8 +5,8 @@ export const ExperienceDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  max-width: 65vw;
-  margin: 1em;
+  
+  margin: 1em 0;
 
   .experienceHeader {
     background-color: var(experienceColor);
@@ -40,6 +40,7 @@ export const ExperienceDiv = styled.div`
 
   :hover {
     cursor: pointer;
+      transform: scale(1.05);
   }
 `;
 
@@ -108,7 +109,3 @@ class Experience extends Component {
 }
 
 export default Experience;
-
-{
-  /* <div>{}</div>; */
-}

@@ -1,5 +1,6 @@
 import React from "react";
 import Experience from "./Experience.js";
+import Skills from "./Skills.js";
 
 import experiences from "./experiences.js";
 
@@ -20,7 +21,10 @@ function Knowledge() {
   return (
     <div className="mainContainer">
       <h1>Knowledge</h1>
-      {experienceList}
+      <div id="skillsContainer">
+        <Skills />
+      </div>
+      <div id="experienceContainer"> {experienceList}</div>
     </div>
   );
 }
