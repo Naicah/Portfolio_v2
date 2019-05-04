@@ -14,7 +14,6 @@ export const CodeSkillDiv = styled.div`
   margin: 0.5em;
   color: var(--color-dark-1);
 
-  background-color: var(--color-light-1);
   i {
     font-size: var(--font-size-xl);
   }

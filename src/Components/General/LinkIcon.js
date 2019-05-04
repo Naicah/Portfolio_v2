@@ -22,6 +22,10 @@ function LinkIcon({ linkType, url }) {
       icon = "fas fa-globe";
       tooltip = "See webpage";
       break;
+    case "LinkedIn":
+      icon = "fab fa-linkedin";
+      tooltip = "See my LinkedIn profile";
+      break;
     default:
       icon = "";
       tooltip = "";

@@ -3,12 +3,15 @@ import styled from "styled-components";
 import CodeSkill from "./CodeSkill.js";
 
 export const SkillsDiv = styled.div`
+  padding: 1.5em 1em;
   .codeSkillsContainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    background-color: var(--color-light-1);
-    padding: 1em;
+  }
+
+  h3 {
+    font-size: var(--font-size-m);
   }
 `;
 
@@ -55,7 +58,7 @@ function Skills() {
 
   return (
     <SkillsDiv>
-      <p>Technologies & Languages</p>
+      <h3>Technologies & Languages</h3>
       <div className="codeSkillsContainer">{codeSkillsList}</div>
     </SkillsDiv>
   );

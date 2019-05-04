@@ -1,3 +1,10 @@
-.skillsContainer {
+#skillsContainer {
   margin: auto;
+  background-color: var(--color-light-1);
+}
+
+#linkButtonToResume {
+  max-width: 50%;
+  margin: 2em auto;
+  font-size: var(--font-size-xs);
 }
