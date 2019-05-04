@@ -3,7 +3,7 @@ import { ProjectCardDiv } from "./style.js";
 import { LinkIcon } from "../General";
 import TechniqueIcon from "./TechniqueIcon.js";
 
-class ProjectCard extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,9 @@ class ProjectCard extends Component {
 
   flipCard = () => {
     const { flipped } = this.state;
+
     this.setState({ flipped: !flipped });
+    console.log("card clicked", flipped);
   };
   componentDidMount() {
     const {
@@ -43,7 +45,7 @@ class ProjectCard extends Component {
 
     this.setState({
       back: (
-        <div className="projectCardBack" key="back">
+        <div className="projectCardBack">
           <div>
             <h3>{name}</h3>
             <p>{description}</p>
@@ -69,7 +71,6 @@ class ProjectCard extends Component {
         <div
           className="projectCardFront"
           style={{ backgroundImage: "url(" + bgImg + ")" }}
-          key="front"
         />
       )
     });
@@ -82,7 +83,7 @@ class ProjectCard extends Component {
     if (flipped) {
       card = back;
     }
-
+    console.log("flipped: ", flipped);
     return (
       <ProjectCardDiv id={id + "projectCardDiv"} onClick={this.flipCard}>
         {card}
@@ -91,4 +92,4 @@ class ProjectCard extends Component {
   }
 }
 
-export default ProjectCard;
+export default Profile;

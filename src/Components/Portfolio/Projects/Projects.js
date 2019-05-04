@@ -4,7 +4,7 @@ const projects = [
   {
     id: "1",
     name: "Booking App",
-    img: "",
+    img: "agave.jpg",
     description:
       "Web based application to book rooms, see attendance and ETA for attending",
     links: [
@@ -16,7 +16,7 @@ const projects = [
   {
     id: "2",
     name: "Booking App",
-    img: "",
+    img: "blue_sea.jpg",
     description:
       "Web based application to book rooms, see attendance and ETA for attending",
     links: [
