@@ -1,6 +1,7 @@
 import React from "react";
 import Experience from "./Experience.js";
 import Skills from "./Skills.js";
+import { LinkButton } from "../General";
 
 import experiences from "./experiences.js";
 
@@ -25,6 +26,7 @@ function Knowledge() {
         <Skills />
       </div>
       <div id="experienceContainer"> {experienceList}</div>
+      <LinkButton url="Resume" text="See full resumé" id="linkButtonToResume" />
     </div>
   );
 }

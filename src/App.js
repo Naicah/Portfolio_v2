@@ -11,6 +11,7 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
 import Knowledge from "./Components/Knowledge";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             path="/knowledge"
             render={() => <Knowledge title="Knowledge" />}
           />
+          <Route path="/contact" render={() => <Contact title="Contact" />} />
+
           {/* <Route exact path="/teachers" component={ Teachers } />
         <Route path="/teachers/:topic/:name" component={ Featured } />
         <Route component={ NotFound } /> */}

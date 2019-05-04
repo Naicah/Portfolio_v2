@@ -84,16 +84,14 @@ class Experience extends Component {
     };
 
     return (
-      <ExperienceDiv>
-        <div
-          className="experienceHeader"
-          onClick={this.toggleDetails}
-          style={bgColor}
-        >
+      <ExperienceDiv onClick={this.toggleDetails}>
+        <div className="experienceHeader" style={bgColor}>
           <div className="experienceTitle">
-            <p className="experienceName">{name}</p>
-            <p>|</p>
-            <p className="experienceAt">{at}</p>
+            <p>
+              <span className="experienceName">{name}</span>
+              <span>|</span>
+              <span className="experienceAt">{at}</span>
+            </p>
           </div>
           <p className="experienceDate">{date}</p>
         </div>
