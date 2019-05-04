@@ -1,5 +1,3 @@
-// import React from "react";
-
 const projects = [
   {
     id: "1",

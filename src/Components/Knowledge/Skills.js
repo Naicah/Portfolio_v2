@@ -56,7 +56,7 @@ function Skills() {
   return (
     <SkillsDiv>
       <p>Technologies & Languages</p>
-      <div class="codeSkillsContainer">{codeSkillsList}</div>
+      <div className="codeSkillsContainer">{codeSkillsList}</div>
     </SkillsDiv>
   );
 }
