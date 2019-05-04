@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard.js";
 import projects from "./Projects/Projects.js";
+import { FlipCard } from "../General";
 
 let projectList = [];
 
 function Portfolio() {
-  let flipped = false;
   projects.forEach(function(project) {
     projectList.push(
       <ProjectCard
@@ -16,15 +16,15 @@ function Portfolio() {
         description={project.description}
         links={project.links}
         techniques={project.techniques}
-        flipped={flipped}
       />
     );
   });
   return (
     <div className="mainContainer">
       <h1>Portfolio</h1>
+      <FlipCard />
 
-      <div id="portfolioCardContainer">{projectList}</div>
+      <div id="portfolioCardContainer"> {projectList}</div>
     </div>
   );
 }

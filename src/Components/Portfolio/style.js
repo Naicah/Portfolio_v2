@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectCardDiv = styled.div`
+  /* ------------------ GENERAL ---------------------*/
   -webkit-box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
   -moz-box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
   box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
@@ -9,6 +10,13 @@ export const ProjectCardDiv = styled.div`
   max-width: 80%;
   height: 35vh;
 
+  /* ------------------ HOVER ---------------------*/
+  :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  /* ------------------ FRONT ---------------------*/
   .projectCardFront {
     background-size: cover;
     height: 100%;
@@ -16,6 +24,7 @@ export const ProjectCardDiv = styled.div`
     padding: 0;
   }
 
+  /* ------------------ BACK ---------------------*/
   .projectCardBack {
     height: 100%;
     width: 100%;
@@ -57,10 +66,5 @@ export const ProjectCardDiv = styled.div`
         border: none;
       }
     }
-  }
-
-  :hover {
-    cursor: pointer;
-    transform: scale(1.05);
   }
 `;

@@ -109,3 +109,28 @@ p {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+/* ================ FLIP TRANSITION ================= */
+#flip-div {
+  background-color: rgb(94, 94, 240);
+  border: 2px solid black;
+  width: 30vh;
+  height: 30vh;
+}
+#flip-div:hover {
+  cursor: pointer;
+}
+.flip-enter-active {
+  transition: all 1s ease;
+  border: 10px solid red;
+}
+/* .flip-exit-done {
+  opacity: 1;
+} */
+
+.flip-enter,
+.flip-exit {
+  transform: rotateY(180deg);
+  opacity: 0;
+  border: 10px solid green;
+}
