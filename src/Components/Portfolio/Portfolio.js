@@ -5,23 +5,25 @@ import projects from "./Projects/Projects.js";
 
 let projectList = [];
 
-projects.forEach(function(project) {
-  projectList.push(
-    <ProjectCard
-      id={project.id}
-      name={project.name}
-      img={project.img}
-      description={project.description}
-      links={project.links}
-      techniques={project.techniques}
-    />
-  );
-});
-
 function Portfolio() {
+  let flipped = false;
+  projects.forEach(function(project) {
+    projectList.push(
+      <ProjectCard
+        id={project.id}
+        name={project.name}
+        img={project.img}
+        description={project.description}
+        links={project.links}
+        techniques={project.techniques}
+        flipped={flipped}
+      />
+    );
+  });
   return (
     <div className="mainContainer">
       <h1>Portfolio</h1>
+
       <div id="portfolioCardContainer">{projectList}</div>
     </div>
   );

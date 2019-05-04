@@ -15,7 +15,9 @@ class Profile extends Component {
 
   flipCard = () => {
     const { flipped } = this.state;
+
     this.setState({ flipped: !flipped });
+    console.log("card clicked", flipped);
   };
   componentDidMount() {
     const {
@@ -81,6 +83,7 @@ class Profile extends Component {
     if (flipped) {
       card = back;
     }
+    console.log("flipped: ", flipped);
     return (
       <ProjectCardDiv id={id + "projectCardDiv"} onClick={this.flipCard}>
         {card}
