@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard.js";
-import projects from "./Projects/Projects.js";
+import projects from "./Projects/projects.js";
 import { FlipCard } from "../General";
 
 let projectList = [];

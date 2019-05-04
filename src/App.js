@@ -9,6 +9,7 @@ import "./Components/About/about.css";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
+import Knowledge from "./Components/Knowledge";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route
             path="/portfolio"
             render={() => <Portfolio title="Portfolio" />}
+          />
+          <Route
+            path="/knowledge"
+            render={() => <Knowledge title="Knowledge" />}
           />
           {/* <Route exact path="/teachers" component={ Teachers } />
         <Route path="/teachers/:topic/:name" component={ Featured } />
