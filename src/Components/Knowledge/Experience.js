@@ -9,7 +9,7 @@ export const ExperienceDiv = styled.div`
   margin: 1em;
 
   .experienceHeader {
-    background-color: var(--color-dark-1);
+    background-color: var(experienceColor);
     padding: 0.5em;
   }
 
@@ -17,7 +17,6 @@ export const ExperienceDiv = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    background-color: var(--color-dark-1);
     font-weight: 800;
     font-size: var(--font-size-m);
     margin-bottom: 0.3em;
@@ -30,7 +29,9 @@ export const ExperienceDiv = styled.div`
   }
 
   .experienceDetails {
-    border: 2px solid var(--color-dark-1);
+    margin-bottom: 0.3em;
+  border-radius: : 2px;
+  border-style: solid;
     padding: 0.8em;
   }
   .hidden {
@@ -57,9 +58,37 @@ class Experience extends Component {
   render() {
     const { type, name, at, date, text } = this.props;
     const { hidden } = this.state;
+
+    let experienceColor;
+
+    switch (type) {
+      case "job":
+        experienceColor = "var(--color-dark-1)";
+        break;
+      case "education":
+        experienceColor = "var(--color-dark-2)";
+        break;
+      case "extra":
+        experienceColor = "var(--color-accent)";
+        break;
+      default:
+        experienceColor = "white";
+    }
+    var bgColor = {
+      backgroundColor: experienceColor
+    };
+
+    var borderColor = {
+      borderColor: experienceColor
+    };
+
     return (
       <ExperienceDiv>
-        <div className="experienceHeader" onClick={this.toggleDetails}>
+        <div
+          className="experienceHeader"
+          onClick={this.toggleDetails}
+          style={bgColor}
+        >
           <div className="experienceTitle">
             <p className="experienceName">{name}</p>
             <p>|</p>
@@ -69,6 +98,7 @@ class Experience extends Component {
         </div>
         <div
           className={hidden ? "experienceDetails hidden" : "experienceDetails"}
+          style={borderColor}
         >
           <p className="experienceText">{text}</p>
         </div>

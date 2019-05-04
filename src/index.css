@@ -10,6 +10,7 @@
   --color-accent: #c78a95; /* rgba: 199,138,149,1 */
   --color-light-2: #e8d0d4; /* rgba: 232,208,212,1 */
   --color--bg: white;
+  --color-experience: var(--color-dark-1);
 
   /* =============== FONT STACKS ================== */
   --font-stack-fancy: "Dancing Script", cursive;
