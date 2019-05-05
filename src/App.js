@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "./Components/About/about.css";
 import "./Components/Knowledge/knowledge.css";
+import "./Components/Contact/contact.css";
 
 // App components
 import Home from "./Components/Home";

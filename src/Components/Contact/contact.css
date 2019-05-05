@@ -1,0 +1,24 @@
+.contactForm {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  width: 60vw;
+  margin: auto;
+  margin-top: 4em;
+}
+.contactForm div {
+  display: flex;
+  flex-flow: column wrap;
+  height: 5em;
+}
+
+.contactForm label {
+  color: var(--color-dark-2);
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-light-1);
+}
