@@ -57,7 +57,7 @@ h1 {
   font-size: var(--font-size-xl);
   font-family: var(--font-stack-fancy);
   text-align: center;
-  margin-bottom: 0.3em;
+  margin: 0.3em auto;
 }
 
 h3 {

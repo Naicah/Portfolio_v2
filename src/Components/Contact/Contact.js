@@ -33,7 +33,7 @@ class Contact extends Component {
               <input
                 onChange={e => this.setState({ email: e.target.value })}
                 name="email"
-                className="emailInput"
+                className="email"
                 type="email"
                 required
                 value={this.state.email}
@@ -45,7 +45,7 @@ class Contact extends Component {
               <input
                 onChange={e => this.setState({ phone: e.target.value })}
                 name="phone"
-                className="message-phone"
+                className="phone"
                 type="text"
                 value={this.state.phone}
               />
@@ -56,24 +56,37 @@ class Contact extends Component {
               <input
                 onChange={e => this.setState({ subject: e.target.value })}
                 name="subject"
-                className="message-subject"
+                className="subject"
                 type="text"
                 value={this.state.subject}
               />
               <label htmlFor="message-subject">Subject</label>
             </div>
 
-            <div>
+            <div className="messageContainer">
               <textarea
                 onChange={e => this.setState({ message: e.target.value })}
                 name="message"
-                className="message-input"
+                className="message"
                 type="text"
                 value={this.state.message}
                 required
               />
               <label htmlFor="message-input">Message</label>
             </div>
+
+            <span class="input input--minoru">
+              <input
+                class="input__field input__field--yoko"
+                type="text"
+                id="input-17"
+              />
+              <label class="input__label input__label--yoko" for="input-17">
+                <span class="input__label-content input__label-content--yoko">
+                  City
+                </span>
+              </label>
+            </span>
 
             <div className="button--container">
               <button type="submit" className="button button-primary">
@@ -82,7 +95,7 @@ class Contact extends Component {
             </div>
           </form>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
