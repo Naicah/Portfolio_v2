@@ -1,6 +1,30 @@
 // Slack icon: <i className="fab fa-slack"></i>
 import React, { Component } from "react";
+import InputField from "./InputField";
 import { Footer } from "../General";
+
+const inputs = [
+  {
+    name: "Name",
+    type: "text"
+  },
+  {
+    name: "Email",
+    type: "email"
+  },
+  {
+    name: "Phone",
+    type: "tel"
+  },
+  {
+    name: "Subject",
+    type: "text"
+  },
+  {
+    name: "Message",
+    type: "textarea"
+  }
+];
 
 class Contact extends Component {
   state = {
@@ -11,6 +35,13 @@ class Contact extends Component {
     buttonText: "Send Message"
   };
 
+  makeSetInputFieldValue = () => (statePropertyName, value) => {
+    let newState = {};
+    newState[statePropertyName] = value;
+
+    this.setState(newState);
+  };
+
   render() {
     return (
       <div>
@@ -18,75 +49,13 @@ class Contact extends Component {
           <h1>Contact</h1>
 
           <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
-            <div>
-              <input
-                onChange={e => this.setState({ name: e.target.value })}
-                name="name"
-                className="nameInput"
-                type="text"
+            {inputs.map(props => (
+              <InputField
+                {...props}
+                setStateValue={this.makeSetInputFieldValue()}
                 value={this.state.name}
               />
-              <label htmlFor="message-name">Name</label>
-            </div>
-
-            <div>
-              <input
-                onChange={e => this.setState({ email: e.target.value })}
-                name="email"
-                className="email"
-                type="email"
-                required
-                value={this.state.email}
-              />
-              <label htmlFor="message-email">Email</label>
-            </div>
-
-            <div>
-              <input
-                onChange={e => this.setState({ phone: e.target.value })}
-                name="phone"
-                className="phone"
-                type="text"
-                value={this.state.phone}
-              />
-              <label htmlFor="message-name">Phone</label>
-            </div>
-
-            <div>
-              <input
-                onChange={e => this.setState({ subject: e.target.value })}
-                name="subject"
-                className="subject"
-                type="text"
-                value={this.state.subject}
-              />
-              <label htmlFor="message-subject">Subject</label>
-            </div>
-
-            <div className="messageContainer">
-              <textarea
-                onChange={e => this.setState({ message: e.target.value })}
-                name="message"
-                className="message"
-                type="text"
-                value={this.state.message}
-                required
-              />
-              <label htmlFor="message-input">Message</label>
-            </div>
-
-            <span class="input input--minoru">
-              <input
-                class="input__field input__field--yoko"
-                type="text"
-                id="input-17"
-              />
-              <label class="input__label input__label--yoko" for="input-17">
-                <span class="input__label-content input__label-content--yoko">
-                  City
-                </span>
-              </label>
-            </span>
+            ))}
 
             <div className="button--container">
               <button type="submit" className="button button-primary">
@@ -95,7 +64,7 @@ class Contact extends Component {
             </div>
           </form>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }
