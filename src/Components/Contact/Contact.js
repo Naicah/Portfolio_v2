@@ -95,7 +95,7 @@ class Contact extends Component {
             </div>
           </form>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }

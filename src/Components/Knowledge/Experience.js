@@ -60,7 +60,7 @@ class Experience extends Component {
     const { type, name, at, date, text } = this.props;
     const { hidden } = this.state;
 
-    let experienceColor;
+    let experienceColor = "black";
 
     switch (type) {
       case "job":
@@ -72,20 +72,15 @@ class Experience extends Component {
       case "extra":
         experienceColor = "var(--color-accent)";
         break;
-      default:
-        experienceColor = "white";
+      // no default
     }
-    var bgColor = {
-      backgroundColor: experienceColor
-    };
-
-    var borderColor = {
-      borderColor: experienceColor
-    };
 
     return (
       <ExperienceDiv onClick={this.toggleDetails}>
-        <div className="experienceHeader" style={bgColor}>
+        <div
+          className="experienceHeader"
+          style={{ backgroundColor: experienceColor }}
+        >
           <div className="experienceTitle">
             <p>
               <span className="experienceName">{name}</span>
@@ -97,7 +92,7 @@ class Experience extends Component {
         </div>
         <div
           className={hidden ? "experienceDetails hidden" : "experienceDetails"}
-          style={borderColor}
+          style={{ borderColor: experienceColor }}
         >
           <p className="experienceText">{text}</p>
         </div>
