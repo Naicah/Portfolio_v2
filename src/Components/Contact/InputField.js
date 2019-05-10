@@ -11,8 +11,17 @@ function InputField({ setStateValue, name, type, value }) {
   const label = name;
   name = name.toLowerCase();
 
+  let input = "input";
+  let inputFilled = "input input--filled";
+
+  let filled = false;
+
+  if (value.trim() !== "") {
+    filled = true;
+  }
+
   return (
-    <div className="input">
+    <div className={filled ? inputFilled : input}>
       <InputType
         onChange={e => setStateValue(name, e.target.value)}
         name={name}
@@ -21,10 +30,10 @@ function InputField({ setStateValue, name, type, value }) {
         value={value}
       />
       <label
-        class="input__label input__label--yoko"
+        className="input__label input__label--yoko"
         htmlFor={"message-" + name}
       >
-        <span class="input__label-content input__label-content--yoko">
+        <span className="input__label-content input__label-content--yoko">
           {label}
         </span>
       </label>

@@ -29,15 +29,17 @@ const inputs = [
 class Contact extends Component {
   state = {
     name: "",
-    message: "",
     email: "",
-    sent: false,
-    buttonText: "Send Message"
+    phone: "",
+    subject: "",
+    message: "",
+    sent: false
   };
 
   makeSetInputFieldValue = () => (statePropertyName, value) => {
-    let newState = {};
-    newState[statePropertyName] = value;
+    let newState = {
+      [statePropertyName]: value
+    };
 
     this.setState(newState);
   };
@@ -53,13 +55,13 @@ class Contact extends Component {
               <InputField
                 {...props}
                 setStateValue={this.makeSetInputFieldValue()}
-                value={this.state.name}
+                value={this.state[props.name.toLowerCase()]}
               />
             ))}
 
             <div className="button--container">
               <button type="submit" className="button button-primary">
-                {this.state.buttonText}
+                Skicka
               </button>
             </div>
           </form>
