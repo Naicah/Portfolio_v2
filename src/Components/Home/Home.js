@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Logo } from "../General/Logo.js";
+import { Logo } from "../General";
 
 export const HomeDiv = styled.div`
   width: 100vw;

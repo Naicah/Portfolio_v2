@@ -1,7 +1,8 @@
 import LinkButton from "./LinkButton";
 import LinkIcon from "./LinkIcon";
-import FlipCard from "./FlipCard.js";
-import Footer from "./Footer.js";
-import Nav from "./Nav.js";
+import FlipCard from "./FlipCard";
+import Footer from "./Footer";
+import Nav from "./Nav";
+import Logo from "./Logo";
 
-export { LinkButton, LinkIcon, FlipCard, Footer, Nav };
+export { LinkButton, LinkIcon, FlipCard, Footer, Nav, Logo };

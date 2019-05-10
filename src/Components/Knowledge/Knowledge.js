@@ -3,7 +3,7 @@ import Experience from "./Experience.js";
 import Skills from "./Skills.js";
 import { LinkButton } from "../General";
 
-import experiences from "./experiences.js";
+import { experiences } from "../../database.js";
 
 function Knowledge() {
   let experienceList = [];
