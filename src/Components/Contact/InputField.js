@@ -11,17 +11,14 @@ function InputField({ setStateValue, name, type, value }) {
   const label = name;
   name = name.toLowerCase();
 
-  let input = "input";
-  let inputFilled = "input input--filled";
-
-  let filled = false;
+  let inputClassName = "input";
 
   if (value.trim() !== "") {
-    filled = true;
+    inputClassName += " input--filled";
   }
 
   return (
-    <div className={filled ? inputFilled : input}>
+    <div className={inputClassName}>
       <InputType
         onChange={e => setStateValue(name, e.target.value)}
         name={name}

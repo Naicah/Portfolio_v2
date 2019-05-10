@@ -13,13 +13,16 @@ export const NavDiv = styled.div`
     padding: 1em;
   }
 
-  NavLink:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+  NavLink {
+    color: red;
   }
 
+  *:hover,
   .active {
-    border-bottom: 2px solid var(--color-light-1);
+    /* cursor: pointer; */
+    transform: scale(1.05);
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-accent);
   }
 `;
 

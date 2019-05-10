@@ -9,7 +9,7 @@
 .contactForm div {
   display: flex;
   flex-flow: column wrap;
-  height: 5em;
+  min-height: 5em;
 }
 
 /* =========================== YOKO ================================= */

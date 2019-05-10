@@ -52,7 +52,12 @@ function Skills() {
   let codeSkillsList = [];
   codeSkills.forEach(function(skill) {
     codeSkillsList.push(
-      <CodeSkill icon={skill.icon} main={skill.main} styles={skill.styles} />
+      <CodeSkill
+        icon={skill.icon}
+        main={skill.main}
+        styles={skill.styles}
+        key={skill.main}
+      />
     );
   });
 

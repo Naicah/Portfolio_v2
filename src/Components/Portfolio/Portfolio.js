@@ -10,6 +10,7 @@ function Portfolio() {
   projects.forEach(function(project) {
     projectList.push(
       <ProjectCard
+        key={project.id}
         id={project.id}
         name={project.name}
         img={project.img}
@@ -22,7 +23,7 @@ function Portfolio() {
   return (
     <div className="mainContainer">
       <h1>Portfolio</h1>
-      <FlipCard />
+      {/* <FlipCard /> */}
 
       <div id="portfolioCardContainer"> {projectList}</div>
     </div>

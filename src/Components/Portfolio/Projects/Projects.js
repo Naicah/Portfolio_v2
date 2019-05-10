@@ -12,7 +12,7 @@ const projects = [
     techniques: ["React", "Firebase"]
   },
   {
-    id: "2",
+    id: "2asd",
     name: "Booking App",
     img: "blue_sea.jpg",
     description:

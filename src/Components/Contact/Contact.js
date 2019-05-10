@@ -46,27 +46,26 @@ class Contact extends Component {
 
   render() {
     return (
-      <div>
-        <div className="mainContainer">
-          <h1>Contact</h1>
+      <div className="mainContainer">
+        <h1>Contact</h1>
 
-          <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
-            {inputs.map(props => (
-              <InputField
-                {...props}
-                setStateValue={this.makeSetInputFieldValue()}
-                value={this.state[props.name.toLowerCase()]}
-              />
-            ))}
+        <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
+          {inputs.map(props => (
+            <InputField
+              {...props}
+              setStateValue={this.makeSetInputFieldValue()}
+              value={this.state[props.name.toLowerCase()]}
+              key={props.name}
+            />
+          ))}
 
-            <div className="button--container">
-              <button type="submit" className="button button-primary">
-                Skicka
-              </button>
-            </div>
-          </form>
-        </div>
-        {/* <Footer /> */}
+          <div className="button--container">
+            <button type="submit" className="button button-primary">
+              Skicka
+            </button>
+          </div>
+        </form>
+        <Footer />
       </div>
     );
   }
