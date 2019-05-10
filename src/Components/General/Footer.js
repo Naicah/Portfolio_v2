@@ -9,7 +9,7 @@ export const FooterDiv = styled.div`
   align-content: flex-end;
   width: 100%;
   height: 8em;
-  font-size: var(--font-size-s);
+  font-size: var(--font-size-xs);
   background-color: var(--color-dark-1);
   position: absolute;
   left: 0px;

@@ -32,11 +32,19 @@ class ProjectCard extends Component {
     let linkIcons = [];
 
     techniques.forEach(function(technique) {
-      techniqueIcons.push(<TechniqueIcon technique={technique} id={id} />);
+      techniqueIcons.push(
+        <TechniqueIcon technique={technique} key={id + technique} />
+      );
     });
 
     links.forEach(function(link) {
-      linkIcons.push(<LinkIcon linkType={link.linkType} url={link.url} />);
+      linkIcons.push(
+        <LinkIcon
+          linkType={link.linkType}
+          url={link.url}
+          key={id + link.linkType}
+        />
+      );
     });
 
     let bgImg = require("../../Media/" + String(img));

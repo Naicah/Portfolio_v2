@@ -15,6 +15,7 @@ function Knowledge() {
         at={experience.at}
         date={experience.date}
         text={experience.text}
+        key={experience.name + experience.date}
       />
     );
   });

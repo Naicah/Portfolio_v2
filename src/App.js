@@ -5,8 +5,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "./Components/About/about.css";
 import "./Components/Knowledge/knowledge.css";
+import "./Components/Contact/contact.css";
 
 // App components
+import { Nav } from "./Components/General";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
@@ -16,6 +18,7 @@ import Contact from "./Components/Contact";
 function App() {
   return (
     <BrowserRouter>
+      <Nav />
       <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />
