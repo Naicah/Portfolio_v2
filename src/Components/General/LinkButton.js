@@ -23,10 +23,10 @@ export const LinkButtonDiv = styled.div`
   }
 `;
 
-function LinkButton({ url, text, id }) {
+function LinkButton({ url, text, id, target }) {
   return (
     <LinkButtonDiv id={id}>
-      <a href={url} target="blank">
+      <a href={url} target={target}>
         {text}
       </a>
     </LinkButtonDiv>

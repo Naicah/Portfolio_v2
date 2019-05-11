@@ -1,9 +1,10 @@
 import React from "react";
 import Experience from "./Experience.js";
 import Skills from "./Skills.js";
+import TreeHouseAPI from "./TreeHouseAPI.js";
 import { LinkButton } from "../General";
 
-import { experiences, CodeSkills } from "../../database.js";
+import { experiences } from "../../database.js";
 
 function Knowledge() {
   return (
@@ -11,6 +12,7 @@ function Knowledge() {
       <h1>Knowledge</h1>
       <div id="skillsContainer">
         <Skills />
+        <TreeHouseAPI />
       </div>
       <div id="experienceContainer">
         {experiences.map(experience => (

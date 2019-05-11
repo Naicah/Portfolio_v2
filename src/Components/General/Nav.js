@@ -38,6 +38,7 @@ class Nav extends Component {
         >
           <NavHashLink
             smooth
+            exact
             to="/#about"
             activeClassName="active"
             className="navLink menu-item"
@@ -48,6 +49,7 @@ class Nav extends Component {
 
           <NavHashLink
             smooth
+            exact
             to="/#portfolio"
             activeClassName="active"
             className="navLink menu-item"

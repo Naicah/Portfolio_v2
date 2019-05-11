@@ -9,11 +9,9 @@ import "./Components/Contact/contact.css";
 
 // App components
 import { Nav, Footer, Main } from "./Components/General";
-import Home from "./Components/Home";
+
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
-import Knowledge from "./Components/Knowledge";
-import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -26,6 +24,7 @@ function App() {
           <Route exact path="/interaction" component={Portfolio} />
           <Route path="/" render={() => <Main title="Main" />} />
         </Switch>
+
         <Footer />
       </div>
     </BrowserRouter>

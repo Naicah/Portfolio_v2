@@ -65,7 +65,7 @@ export const codeSkills = [
   {
     icon: "far fa-file-code",
     main: "JavaScript",
-    styles: "jQuery, JSON, React, Vue"
+    styles: "AJAX, jQuery, JSON, React, Vue"
   },
   {
     icon: "fab fa-node-js",
