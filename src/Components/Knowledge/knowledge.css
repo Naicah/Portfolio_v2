@@ -8,3 +8,7 @@
   margin: 2em auto;
   font-size: var(--font-size-xs);
 }
+
+h3 {
+  font-size: var(--font-size-m);
+}

@@ -3,10 +3,9 @@
   flex-flow: column wrap;
   justify-content: space-evenly;
   width: 60vw;
-  margin: auto;
-  margin-top: 4em;
+  margin: 4em auto;
 }
-.contactForm div {
+.input {
   display: flex;
   flex-flow: column wrap;
   min-height: 5em;

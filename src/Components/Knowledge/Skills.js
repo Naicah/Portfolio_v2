@@ -10,10 +10,6 @@ export const SkillsDiv = styled.div`
     flex-flow: row wrap;
     justify-content: space-around;
   }
-
-  h3 {
-    font-size: var(--font-size-m);
-  }
 `;
 
 function Skills() {

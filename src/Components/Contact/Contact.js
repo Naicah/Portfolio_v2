@@ -1,6 +1,7 @@
 // Slack icon: <i className="fab fa-slack"></i>
 import React, { Component } from "react";
 import InputField from "./InputField";
+import { LinkButton } from "../General";
 
 const inputs = [
   {
@@ -58,11 +59,7 @@ class Contact extends Component {
             />
           ))}
 
-          <div className="button--container">
-            <button type="submit" className="button button-primary">
-              Skicka
-            </button>
-          </div>
+          <LinkButton type="submit" url="" text="Send" id="sendContactForm" />
         </form>
       </div>
     );
