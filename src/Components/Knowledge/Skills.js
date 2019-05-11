@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CodeSkill from "./CodeSkill.js";
+import { codeSkills } from "../../database";
 
 export const SkillsDiv = styled.div`
   padding: 1.5em 1em;
@@ -16,55 +17,14 @@ export const SkillsDiv = styled.div`
 `;
 
 function Skills() {
-  const codeSkills = [
-    {
-      icon: "fab fa-html5",
-      main: "HTML5",
-      styles: "Bootstrap"
-    },
-    {
-      icon: "fab fa-css3",
-      main: "CSS3",
-      styles: "LESS, Animations"
-    },
-    {
-      icon: "far fa-file-code",
-      main: "JavaScript",
-      styles: "jQuery, JSON, React, Vue"
-    },
-    {
-      icon: "fab fa-node-js",
-      main: "node.js",
-      styles: "Express, Koa, Knex"
-    },
-    {
-      icon: "fas fa-cogs",
-      main: "Java, SQL",
-      styles: "Firebase, Wordpress"
-    },
-    {
-      icon: "fas fa-desktop",
-      main: "Adobe XD",
-      styles: "Photoshop, Postman "
-    }
-  ];
-
-  let codeSkillsList = [];
-  codeSkills.forEach(function(skill) {
-    codeSkillsList.push(
-      <CodeSkill
-        icon={skill.icon}
-        main={skill.main}
-        styles={skill.styles}
-        key={skill.main}
-      />
-    );
-  });
-
   return (
     <SkillsDiv>
       <h3>Technologies & Languages</h3>
-      <div className="codeSkillsContainer">{codeSkillsList}</div>
+      <div className="codeSkillsContainer">
+        {codeSkills.map(skill => (
+          <CodeSkill key={skill.main} {...skill} />
+        ))}
+      </div>
     </SkillsDiv>
   );
 }

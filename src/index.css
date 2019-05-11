@@ -78,6 +78,7 @@ p {
 .mainContainer {
   max-width: 80vw;
   margin: 0 auto;
+  padding-top: 10vh;
   /* border: 1px solid black; */
 }
 

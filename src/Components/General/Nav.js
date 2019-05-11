@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
+import { Logo } from "../General";
 
 export const NavDiv = styled.div`
   display: flex;
   background-color: var(--color-dark-1);
   height: 3em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
 
   * {
     text-decoration: none;
@@ -24,29 +30,33 @@ export const NavDiv = styled.div`
     border-bottom: 2px solid var(--color-accent);
     color: var(--color-accent);
   }
+
+  Logo {
+    height: 2.5em;
+  }
 `;
 
 function Nav() {
   return (
     <NavDiv>
-      <NavLink activeClassName="active" to="/about">
+      <NavHashLink smooth to="/#about" activeClassName="active">
         About
-      </NavLink>
-      <NavLink activeClassName="active" to="/portfolio">
+      </NavHashLink>
+      <NavHashLink smooth to="/#portfolio" activeClassName="active">
         Portfolio
-      </NavLink>
-      <NavLink activeClassName="active" to="/knowledge">
+      </NavHashLink>
+      <NavHashLink smooth to="/#knowledge" activeClassName="active">
         Knowledge
-      </NavLink>
+      </NavHashLink>
       <NavLink activeClassName="active" to="/resume">
         Resumé
       </NavLink>
       <NavLink activeClassName="active" to="/interaction">
         Interaction
       </NavLink>
-      <NavLink activeClassName="active" to="/contact">
+      <NavHashLink smooth to="/#contact" activeClassName="active">
         Contact
-      </NavLink>
+      </NavHashLink>
     </NavDiv>
   );
 }
