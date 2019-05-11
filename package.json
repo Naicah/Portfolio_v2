@@ -5,6 +5,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.10",
     "react-card-flip": "^0.7.0",
     "react-dom": "^16.8.6",
     "react-hooks": "^1.0.1",
