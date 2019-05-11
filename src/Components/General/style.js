@@ -115,6 +115,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease 0s;
+    top: 0;
+    left: 0;
   }
 `;
