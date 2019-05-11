@@ -4,28 +4,17 @@ import ProjectCard from "./ProjectCard";
 import { projects } from "../../database";
 import { FlipCard } from "../General";
 
-let projectList = [];
-
 function Portfolio() {
-  projects.forEach(function(project) {
-    projectList.push(
-      <ProjectCard
-        key={project.id}
-        id={project.id}
-        name={project.name}
-        img={project.img}
-        description={project.description}
-        links={project.links}
-        techniques={project.techniques}
-      />
-    );
-  });
   return (
-    <div className="mainContainer">
+    <div className="mainContainer" id="portfolio">
       <h1>Portfolio</h1>
       {/* <FlipCard /> */}
 
-      <div id="portfolioCardContainer"> {projectList}</div>
+      <div id="portfolioCardContainer">
+        {projects.map(project => (
+          <ProjectCard key={project.id} {...project} />
+        ))}
+      </div>
     </div>
   );
 }

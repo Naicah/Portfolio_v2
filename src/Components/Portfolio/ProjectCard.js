@@ -28,25 +28,6 @@ class ProjectCard extends Component {
       techniques
     } = this.props;
 
-    let techniqueIcons = [];
-    let linkIcons = [];
-
-    techniques.forEach(function(technique) {
-      techniqueIcons.push(
-        <TechniqueIcon technique={technique} key={id + technique} />
-      );
-    });
-
-    links.forEach(function(link) {
-      linkIcons.push(
-        <LinkIcon
-          linkType={link.linkType}
-          url={link.url}
-          key={id + link.linkType}
-        />
-      );
-    });
-
     let bgImg = require("../../Media/" + String(img));
 
     this.setState({
@@ -58,9 +39,17 @@ class ProjectCard extends Component {
           </div>
 
           <div>
-            <div id="techniqueIcons">{techniqueIcons}</div>
+            <div id="techniqueIcons">
+              {techniques.map(technique => (
+                <TechniqueIcon key={id + technique} technique={technique} />
+              ))}
+            </div>
             <div>
-              <div id="projectLinks">{linkIcons}</div>
+              <div id="projectLinks">
+                {links.map(link => (
+                  <LinkIcon key={id + link.linkType} {...link} />
+                ))}
+              </div>
               <div id="learnMoreContainer">
                 <a id="learnMoreBtn" href={projectPage}>
                   Learn more

@@ -4,7 +4,7 @@ import ReactTypingEffect from "react-typing-effect";
 
 function About() {
   return (
-    <div className="mainContainer">
+    <div className="mainContainer" id="about">
       <h1>About</h1>
       <div className="quote">
         <ReactTypingEffect

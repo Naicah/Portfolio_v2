@@ -11,9 +11,6 @@ export const FooterDiv = styled.div`
   height: 8em;
   font-size: var(--font-size-xs);
   background-color: var(--color-dark-1);
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
 
   * {
     color: var(--color-light-1);

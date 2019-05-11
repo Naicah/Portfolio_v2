@@ -8,7 +8,7 @@ import "./Components/Knowledge/knowledge.css";
 import "./Components/Contact/contact.css";
 
 // App components
-import { Nav } from "./Components/General";
+import { Nav, Footer, Main } from "./Components/General";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Portfolio from "./Components/Portfolio";
@@ -18,25 +18,15 @@ import Contact from "./Components/Contact";
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
       <div className="container">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" render={() => <About title="About" />} />
-          <Route
-            path="/portfolio"
-            render={() => <Portfolio title="Portfolio" />}
-          />
-          <Route
-            path="/knowledge"
-            render={() => <Knowledge title="Knowledge" />}
-          />
-          <Route path="/contact" render={() => <Contact title="Contact" />} />
+        <Nav />
 
-          {/* <Route exact path="/teachers" component={ Teachers } />
-        <Route path="/teachers/:topic/:name" component={ Featured } />
-        <Route component={ NotFound } /> */}
+        <Switch>
+          <Route exact path="/resume" render={() => <About title="Resumé" />} />
+          <Route exact path="/interaction" component={Portfolio} />
+          <Route path="/" render={() => <Main title="Main" />} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

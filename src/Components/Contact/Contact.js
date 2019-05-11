@@ -1,7 +1,6 @@
 // Slack icon: <i className="fab fa-slack"></i>
 import React, { Component } from "react";
 import InputField from "./InputField";
-import { Footer } from "../General";
 
 const inputs = [
   {
@@ -46,7 +45,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="mainContainer">
+      <div className="mainContainer" id="contact">
         <h1>Contact</h1>
 
         <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
@@ -65,7 +64,6 @@ class Contact extends Component {
             </button>
           </div>
         </form>
-        <Footer />
       </div>
     );
   }

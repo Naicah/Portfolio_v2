@@ -9,6 +9,7 @@
     "react-dom": "^16.8.6",
     "react-hooks": "^1.0.1",
     "react-router-dom": "^5.0.0",
+    "react-router-hash-link": "^1.2.1",
     "react-scripts": "3.0.0",
     "react-transition-group": "^4.0.0",
     "react-typing-effect": "^2.0.2",
