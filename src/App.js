@@ -11,7 +11,7 @@ import "./Components/Contact/contact.css";
 import { Nav, Footer, Main } from "./Components/General";
 
 import About from "./Components/About";
-import Portfolio from "./Components/Portfolio";
+import { Interaction } from "./Components/Interaction";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
 
         <Switch>
           <Route exact path="/resume" render={() => <About title="Resumé" />} />
-          <Route exact path="/interaction" component={Portfolio} />
+          <Route exact path="/interaction" component={Interaction} />
           <Route path="/" render={() => <Main title="Main" />} />
         </Switch>
 

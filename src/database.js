@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "1",
     name: "Booking App",
-    img: "agave.jpg",
+    img: "blue_sea.jpg",
     description:
       "Web based application to book rooms, see attendance and ETA for attending",
     links: [
