@@ -12,3 +12,7 @@
 h3 {
   font-size: var(--font-size-m);
 }
+
+#experienceContainer {
+  max-width: 100%;
+}

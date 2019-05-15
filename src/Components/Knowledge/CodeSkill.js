@@ -9,13 +9,13 @@ export const CodeSkillDiv = styled.div`
   border: 2px solid white;
   text-align: center;
   width: 7em;
-  height: 10em;
+  height: 12em;
   padding: 0.8em 0.5em;
   margin: 0.5em;
   color: var(--color-dark-1);
 
   i {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xxl);
   }
   p {
     color: var(--color-dark-1);

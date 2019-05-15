@@ -29,7 +29,9 @@ class Nav extends Component {
     return (
       <NavDiv>
         <div id="logoContainer">
-          <Logo id="logo" />
+          <NavHashLink smooth exact to="/#home">
+            <Logo id="logo" />
+          </NavHashLink>
         </div>
         <Menu
           right

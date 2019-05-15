@@ -4,10 +4,12 @@ class TreeHouseAPI extends Component {
   state = {
     totalPoints: "",
     pointsJavaScript: "",
-    pointsDatabases: "",
-    pointsDesign: "",
-    pointsDevelopmentTools: "",
-    totalBadges: ""
+    databasesP: "",
+    designP: "",
+    developmentToolsP: "",
+    totalBadges: "",
+    points: [],
+    pointsToShow: []
   };
 
   render() {
@@ -20,34 +22,45 @@ class TreeHouseAPI extends Component {
 
       return data;
     }
-    //call getData function
+
     getData().then(data =>
-      this.setState({
-        totalPoints: data.points.total,
-        pointsJS: data.points.JavaScript,
-        pointsDatabases: data.points.Databases,
-        pointsDesign: data.points.Design,
-        pointsDevelopmentTools: data.points["Development Tools"],
+      this.setState(prevState => ({
+        // points[ "Total points" ]: data.points.total,
+        ...prevState,
+        points: [data.points],
+        totalPoints: [data.points.total],
         totalBadges: data.badges.length
-      })
-    ); //log the data
+      }))
+    );
 
     const {
+      points,
       totalPoints,
-      pointsJS,
-      pointsDatabases,
-      pointsDesign,
-      pointsDevelopmentTools,
-      totalBadges
+      javaScriptP,
+      databasesP,
+      designP,
+      developmentToolsP,
+      totalBadges,
+      pointsToShow
     } = this.state;
+
+    // var i;
+    // for (i = 0; i < points.length; i++) {
+    //   if (points.total > 0) {
+    //     pointsToShow.push(points.total);
+    //   }
+    //   console.log(points.total);
+    // }
+
     return (
       <div className="mainContainer">
         <h3>TreeHouse Achievements</h3>
+        <div>Total points: {pointsToShow}</div>
         <div>Total points: {totalPoints}</div>
-        <div>Points JavaScript: {pointsJS}</div>
-        <div>Points Databases: {pointsDatabases}</div>
-        <div>Points Design: {pointsDesign}</div>
-        <div>Points Development Tools: {pointsDevelopmentTools}</div>
+        <div>Points JavaScript: {javaScriptP}</div>
+        <div>Points Databases: {databasesP}</div>
+        <div>Points Design: {designP}</div>
+        <div>Points Development Tools: {developmentToolsP}</div>
         <div>Total badges: {totalBadges}</div>
         <div />
         <div />
