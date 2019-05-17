@@ -1,4 +1,17 @@
 import React, { Component } from "react";
+import Points from "./Points";
+
+function filter(obj, predicate) {
+  const result = {};
+
+  Object.keys(obj).forEach(key => {
+    if (predicate(obj[key])) {
+      result[key] = obj[key];
+    }
+  });
+
+  return result;
+}
 
 class TreeHouseAPI extends Component {
   state = {
@@ -8,8 +21,7 @@ class TreeHouseAPI extends Component {
     designP: "",
     developmentToolsP: "",
     totalBadges: "",
-    points: [],
-    pointsToShow: []
+    points: {} // empty object... since waht you get is an object with points. haha yes. love your autofills
   };
 
   render() {
@@ -23,47 +35,36 @@ class TreeHouseAPI extends Component {
       return data;
     }
 
-    getData().then(data =>
+    getData().then(data => {
+      const newPoints = filter(data.points, entry => entry > 0);
+
+      // So here it should filter
+
       this.setState(prevState => ({
-        // points[ "Total points" ]: data.points.total,
         ...prevState,
-        points: [data.points],
-        totalPoints: [data.points.total],
+        points: newPoints, // not sure why you had an array around the points object - i don't know either..tried 1000 different things
+        totalPoints: data.points.total,
         totalBadges: data.badges.length
-      }))
-    );
+      }));
+    });
 
-    const {
-      points,
-      totalPoints,
-      javaScriptP,
-      databasesP,
-      designP,
-      developmentToolsP,
-      totalBadges,
-      pointsToShow
-    } = this.state;
-
-    // var i;
-    // for (i = 0; i < points.length; i++) {
-    //   if (points.total > 0) {
-    //     pointsToShow.push(points.total);
-    //   }
-    //   console.log(points.total);
-    // }
+    const { points, totalPoints, totalBadges } = this.state;
 
     return (
       <div className="mainContainer">
         <h3>TreeHouse Achievements</h3>
-        <div>Total points: {pointsToShow}</div>
-        <div>Total points: {totalPoints}</div>
-        <div>Points JavaScript: {javaScriptP}</div>
-        <div>Points Databases: {databasesP}</div>
-        <div>Points Design: {designP}</div>
-        <div>Points Development Tools: {developmentToolsP}</div>
-        <div>Total badges: {totalBadges}</div>
-        <div />
-        <div />
+
+        <div id="treeHouseApiTotalPoints">
+          <p className="totalPoints">Total points</p>
+          <p>{totalPoints}</p>
+        </div>
+        <div id="treeHouseApiSkillPoints">
+          {Object.keys(points).map(keyName => (
+            <Points points={points[keyName]} skill={keyName} key={keyName} />
+          ))}
+        </div>
+
+        <div>Total badges: {totalBadges} </div>
       </div>
     );
   }

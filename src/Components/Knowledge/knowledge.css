@@ -16,3 +16,13 @@ h3 {
 #experienceContainer {
   max-width: 100%;
 }
+
+#treeHouseApiTotalPoints {
+  padding: 2em;
+}
+.totalPoints {
+}
+#treeHouseApiSkillPoints {
+  display: flex;
+  flex-flow: row wrap;
+}
