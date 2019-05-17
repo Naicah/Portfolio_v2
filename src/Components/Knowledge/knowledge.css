@@ -17,13 +17,13 @@ h3 {
   max-width: 100%;
 }
 
-#treeHouseApiTotalPoints {
+.treeHouseApiTotal {
   width: 80%;
   margin: 0 auto 1em auto;
   padding: 1em;
   border-bottom: 2px solid white;
 }
-.totalPoints {
+.number {
   font-size: var(--font-size-l);
   font-weight: 800;
 }
