@@ -21,8 +21,8 @@
   --font-size-s: 1em;
   --font-size-m: 1.4em;
   --font-size-l: 2em;
-  --font-size-xl: 4em;
-  --font-size-xxl: 6em;
+  --font-size-xl: 3em;
+  --font-size-xxl: 4em;
 
   /* ============ BACKGROUND IMAGES =============== */
   --background-img: url("./Media/blooming_blossom.jpg");
@@ -54,7 +54,7 @@ body {
 /* =================== TEXT ======================= */
 h1 {
   color: var(--color-accent);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
   font-family: var(--font-stack-fancy);
   text-align: center;
   margin: 0.3em auto;

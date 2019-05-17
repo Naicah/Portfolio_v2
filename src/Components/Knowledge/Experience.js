@@ -5,6 +5,7 @@ export const ExperienceDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
+ 
   
   margin: 1em 0;
 
@@ -20,6 +21,7 @@ export const ExperienceDiv = styled.div`
     font-weight: 800;
     font-size: var(--font-size-m);
     margin-bottom: 0.3em;
+    word-break: break-word;
   }
 
   .experienceTitle *,
@@ -83,9 +85,9 @@ class Experience extends Component {
         >
           <div className="experienceTitle">
             <p>
-              <span className="experienceName">{name}</span>
+              {name}
               <span>|</span>
-              <span className="experienceAt">{at}</span>
+              {at}
             </p>
           </div>
           <p className="experienceDate">{date}</p>
