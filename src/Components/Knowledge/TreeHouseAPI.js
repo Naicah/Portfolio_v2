@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Points from "./Points";
 
-function filter(obj, predicate) {
+function filter(obj, condition) {
   const result = {};
 
   Object.keys(obj).forEach(key => {
-    if (predicate(obj[key])) {
+    if (condition(obj[key])) {
       result[key] = obj[key];
     }
   });
@@ -16,12 +16,8 @@ function filter(obj, predicate) {
 class TreeHouseAPI extends Component {
   state = {
     totalPoints: "",
-    pointsJavaScript: "",
-    databasesP: "",
-    designP: "",
-    developmentToolsP: "",
     totalBadges: "",
-    points: {} // empty object... since waht you get is an object with points. haha yes. love your autofills
+    points: {}
   };
 
   render() {
@@ -37,12 +33,11 @@ class TreeHouseAPI extends Component {
 
     getData().then(data => {
       const newPoints = filter(data.points, entry => entry > 0);
-
-      // So here it should filter
+      delete newPoints.total;
 
       this.setState(prevState => ({
         ...prevState,
-        points: newPoints, // not sure why you had an array around the points object - i don't know either..tried 1000 different things
+        points: newPoints,
         totalPoints: data.points.total,
         totalBadges: data.badges.length
       }));
@@ -55,8 +50,8 @@ class TreeHouseAPI extends Component {
         <h3>TreeHouse Achievements</h3>
 
         <div id="treeHouseApiTotalPoints">
-          <p className="totalPoints">Total points</p>
-          <p>{totalPoints}</p>
+          <p className="totalPoints">{totalPoints}</p>
+          <p>Total points</p>
         </div>
         <div id="treeHouseApiSkillPoints">
           {Object.keys(points).map(keyName => (

@@ -18,9 +18,14 @@ h3 {
 }
 
 #treeHouseApiTotalPoints {
-  padding: 2em;
+  width: 80%;
+  margin: 0 auto 1em auto;
+  padding: 1em;
+  border-bottom: 2px solid white;
 }
 .totalPoints {
+  font-size: var(--font-size-l);
+  font-weight: 800;
 }
 #treeHouseApiSkillPoints {
   display: flex;
