@@ -88,7 +88,7 @@ class TreeHouseAPI extends Component {
     return result;
   };
 
-  render() {
+  componentDidMount() {
     async function getData() {
       //await the response of the fetch call
       let response = await fetch("https://teamtreehouse.com/ninahedman.json");
@@ -103,7 +103,8 @@ class TreeHouseAPI extends Component {
       const newPoints = filter(data.points, entry => entry > 0);
       delete newPoints.total;
 
-      const badges = this.getAllBadges(data.badges);
+      // const badges = this.getAllBadges(data.badges);
+      const badges = [];
 
       this.setState(prevState => ({
         ...prevState,
@@ -113,7 +114,9 @@ class TreeHouseAPI extends Component {
         badges: badges
       }));
     });
+  }
 
+  render() {
     const { points, totalPoints, totalBadges, badges } = this.state;
 
     return (

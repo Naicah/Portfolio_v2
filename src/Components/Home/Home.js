@@ -7,7 +7,6 @@ export const HomeDiv = styled.div`
   height: 100vh;
   background-image: var(--background-img);
   background-attachment: fixed;
-  background-position: -60vw 0vw;
   background-size: auto 100vh;
 `;
 
