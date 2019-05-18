@@ -3,28 +3,27 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
 export const ThemeDiv = styled.div`
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 5vh;
-    
-    :hover {
-        cursor: pointer;
-        transform: scale(1.05);
-    }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 5vh;
 
-    .themeImg{
-        height:20vh
+  :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .themeImg {
+    height: 20vh;
     overflow: hidden;
-        img {
-            max-width: 100%;
-        }
+    img {
+      max-width: 100%;
     }
- 
-    .colorPalettContainer {
-      display: flex;
-      row-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      height: 15vh;
+  }
+
+  .colorPalettContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 15vh;
     .themeColor {
       width: 18%;
       height: 95%;

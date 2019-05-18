@@ -56,14 +56,14 @@ function BadgeContainer({ object }) {
             <img
               src={badge["icon_url"]}
               alt="Badge icon"
-              key={badge["title"]}
+              key={badge["title"] + badge["icon_url"]}
             />
           ))}
         </div>
       </div>
       <div className="details">
         {badges.map(badge => (
-          <Badge badge={badge} key={badge["title"]} />
+          <Badge badge={badge} key={course + badge["title"]} />
         ))}
       </div>
     </BadgeDiv>

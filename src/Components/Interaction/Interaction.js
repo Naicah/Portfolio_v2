@@ -1,13 +1,13 @@
 import React from "react";
 import Theme from "./Theme";
-import agave from "../../Media/phone/agave.png";
-import blue_sea from "../../Media/phone/blue_sea.png";
-import blooming_blossom from "../../Media/phone/blooming_blossom.png";
-import cherry_blossom from "../../Media/phone/cherry_blossom.png";
-import dandelion from "../../Media/phone/dandelion.png";
-import movie_moment from "../../Media/phone/movie_moment.png";
-import orchid from "../../Media/phone/orchid.png";
-import white_cherry from "../../Media/phone/white_cherry.png";
+import agave from "../../Media/thumbnails/agave.jpg";
+import blue_sea from "../../Media/thumbnails/blue_sea.jpg";
+import blooming_blossom from "../../Media/thumbnails/blooming_blossom.jpg";
+import cherry_blossom from "../../Media/thumbnails/cherry_blossom.jpg";
+import dandelion from "../../Media/thumbnails/dandelion.jpg";
+import movie_moment from "../../Media/thumbnails/movie_moment.jpg";
+import orchid from "../../Media/thumbnails/orchid.jpg";
+import white_cherry from "../../Media/thumbnails/white_cherry.jpg";
 
 function Interaction() {
   let themes = [

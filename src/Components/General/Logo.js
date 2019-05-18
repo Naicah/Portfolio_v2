@@ -6,4 +6,8 @@ export default styled.div`
   background-position: center center;
   background-size: 90vw;
   background-repeat: no-repeat;
+
+  @media only screen and (min-width: 768px) {
+    background-size: 50vw;
+  }
 `;

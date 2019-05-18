@@ -8,6 +8,10 @@ export const HomeDiv = styled.div`
   background-image: var(--background-img);
   background-attachment: fixed;
   background-size: auto 100vh;
+
+  @media only screen and (min-width: 768px) {
+    background-size: 100vw auto;
+  }
 `;
 
 function Home() {

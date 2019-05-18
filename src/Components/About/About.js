@@ -5,14 +5,17 @@ import ReactTypingEffect from "react-typing-effect";
 function About() {
   return (
     <div className="mainContainer" id="about">
-      <h1>About</h1>
-      <div className="quote">
-        <ReactTypingEffect
-          speed="100"
-          eraseDelay="99999999999999"
-          text="With vision and determination nothing is impossible"
-        />
+      <div className="headerQuoteContainer">
+        <h1>About</h1>
+        <div className="quote">
+          <ReactTypingEffect
+            speed="100"
+            eraseDelay="99999999999999"
+            text="With vision and determination nothing is impossible"
+          />
+        </div>
       </div>
+
       <div id="aboutText">
         <p>
           As a true{" "}
