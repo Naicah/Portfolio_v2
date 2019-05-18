@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Points from "./Points";
-import Badge from "./Badge";
+import BadgeContainer from "./BadgeContainer";
 
 function filter(obj, condition) {
   const result = {};
@@ -20,35 +20,70 @@ class TreeHouseAPI extends Component {
     points: {},
     totalBadges: "",
 
-    allBadges: [
+    badges: [
       {
         course: "",
-        icon_url: "",
         badges: [
           {
             title: this.badgeSteps,
-            url: ""
+            url: "",
+            icon_url: ""
           },
           {
             title: "",
-            url: ""
+            url: "",
+            icon_url: ""
           }
         ]
       }
     ]
   };
 
-  getAllUniqueCourses = data => {
-    let courses = [];
+  getAllBadges = data => {
     let result = [];
+    let badges = [];
 
+    let currentCourse = data[1]["courses"][0].title;
+    console.log("result: ", result);
+    console.log("badges: ", badges);
     let i;
     for (i = 1; i < data.length; i++) {
       let course = data[i]["courses"][0].title;
-      if (!courses.includes(course)) {
-        courses.push(course);
-        result.push({ course: course });
+      let courseUrl = data[i]["courses"][0].url;
+      let skill = data[i]["courses"][1].title;
+      let skillUrl = data[i]["courses"][1].url;
+      let icon_url = data[i].icon_url;
+
+      if (course === currentCourse) {
+        badges.push({
+          title: skill,
+          url: skillUrl,
+          icon_url: icon_url
+        });
+      } else {
+        if (i !== 1) {
+          i = i - 1;
+          course = data[i]["courses"][0].title;
+          courseUrl = data[i]["courses"][0].url;
+          skill = data[i]["courses"][1].title;
+          skillUrl = data[i]["courses"][1].url;
+          icon_url = data[i].icon_url;
+        }
+        result.push({
+          course: course,
+          url: courseUrl,
+          badges: badges
+        });
+
+        currentCourse = course;
+        badges = [];
+        badges.push({
+          title: skill,
+          url: skillUrl,
+          icon_url: icon_url
+        });
       }
+      console.log("result", result);
     }
     return result;
   };
@@ -68,37 +103,18 @@ class TreeHouseAPI extends Component {
       const newPoints = filter(data.points, entry => entry > 0);
       delete newPoints.total;
 
-      const courses = this.getAllUniqueCourses(data.badges);
+      const badges = this.getAllBadges(data.badges);
 
       this.setState(prevState => ({
         ...prevState,
         points: newPoints,
         totalPoints: data.points.total,
         totalBadges: data.badges.length,
-        allBadges: courses
-
-        // allBadges: [
-        //   {
-        //     course: data.badges[1]["courses"][0].title,
-        //     icon_url: data.badges[1].icon_url,
-        //     badges: [
-        //       {
-        //         title: data.badges[1]["courses"][1].title,
-        //         url: ""
-        //       },
-        //       {
-        //         title: "",
-        //         url: ""
-        //       }
-        //     ]
-        //   }
-        // ]
+        badges: badges
       }));
-
-      // console.log(data.badges[1]["courses"][0].title);
     });
 
-    const { points, totalPoints, totalBadges, allBadges } = this.state;
+    const { points, totalPoints, totalBadges, badges } = this.state;
 
     return (
       <div className="mainContainer">
@@ -116,22 +132,11 @@ class TreeHouseAPI extends Component {
         <div className="treeHouseApiTotal">
           <p className="number">{totalBadges}</p>
           <p>Total badges</p>
-          <p>Course: {allBadges[0]["course"]}</p>
-          {/* <p> Icon: {allBadges[0]["icon_url"]}</p>
-          <p> Step: {allBadges[0]["badges"][0]["title"]}</p> */}
         </div>
 
-        <Badge
-          course="React"
-          badges="[ 
-          { step: Newbie,
-          icon: 'https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage1.png' },
-          {
-          step: Tricks,
-          icon: 'https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage2.png' }
-
-          }]"
-        />
+        {badges.map(object => (
+          <BadgeContainer object={object} key={object["course"]} />
+        ))}
       </div>
     );
   }

@@ -2,78 +2,29 @@ import React from "react";
 import styled from "styled-components";
 
 export const BadgeDiv = styled.div`
-  padding: 0.5em;
-
-  border-bottom: 1px solid white;
-  margin: 1.5% auto;
-
   display: flex;
-  flex-flow: column wrap;
-  align-items: space-evenly;
-  width: 80%;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
 
-  .overview,
-  .section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 8vh;
-  }
-
-  .overview {
-    border-bottom: 1px solid white;
-  }
-
-  .courseTitle {
-    font-size: var(--font-size-m);
-    font-weight: 800;
+  div {
+    width: 80%;
   }
 
   img {
-    height: 12vw;
+    height: 10vw;
     margin-left: 0.2em;
   }
 `;
 
-function Badge({ course, badges }) {
+function Badge({ badge }) {
   return (
     <BadgeDiv>
-      <div className="overview">
-        <div className="courseTitle">
-          <p>Tricks</p>
-        </div>
-        <div className="badgesContainer">
-          <img
-            src="https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage2.png"
-            alt="Badge"
-          />
-          <img
-            src="https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage2.png"
-            alt="Badge"
-          />
-        </div>
+      <div>
+        <a href={badge["url"]}>{badge["title"]}</a>
       </div>
-      <div className="details">
-        <div className="section">
-          <div className="points">
-            <p>React</p>
-          </div>
-          <img
-            src="https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage2.png"
-            alt="Badge"
-          />
-        </div>
-        <div className="section">
-          <div className="points">
-            <p>React</p>
-          </div>
-          <img
-            src="https://achievement-images.teamtreehouse.com/badges_JavaScript_react_Stage2.png"
-            alt="Badge"
-          />
-        </div>
-      </div>
+      <img src={badge["icon_url"]} alt="Badge icon" />
     </BadgeDiv>
   );
 }
