@@ -120,7 +120,7 @@ class TreeHouseAPI extends Component {
     const { points, totalPoints, totalBadges, badges } = this.state;
 
     return (
-      <div className="mainContainer">
+      <div>
         <h3>TreeHouse Achievements</h3>
 
         <div className="treeHouseApiTotal">

@@ -33,6 +33,7 @@ class Nav extends Component {
             <Logo id="logo" />
           </NavHashLink>
         </div>
+
         <Menu
           right
           isOpen={this.state.menuOpen}

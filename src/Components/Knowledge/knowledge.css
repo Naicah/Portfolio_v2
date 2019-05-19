@@ -1,20 +1,20 @@
+h3 {
+  font-size: var(--font-size-m);
+}
+
 #skillsContainer {
   margin: auto;
   background-color: var(--color-light-1);
+}
+
+#experienceContainer {
+  max-width: 100%;
 }
 
 #linkButtonToResume {
   max-width: 50%;
   margin: 2em auto;
   font-size: var(--font-size-xs);
-}
-
-h3 {
-  font-size: var(--font-size-m);
-}
-
-#experienceContainer {
-  max-width: 100%;
 }
 
 .treeHouseApiTotal {
@@ -30,4 +30,41 @@ h3 {
 #treeHouseApiSkillPoints {
   display: flex;
   flex-flow: row wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  #knowledge {
+    max-width: 90vw !important;
+  }
+
+  h3 {
+    margin-top: 1em;
+  }
+
+  .skillsExperienceContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #skillsContainer {
+    width: 30%;
+    margin-top: 1em;
+  }
+  #experienceContainer {
+    width: 65%;
+  }
+  #linkButtonToResume {
+    max-width: 15vw;
+    font-size: var(--font-size-s);
+  }
+
+  .treeHouseApiTotal {
+    width: 90%;
+    margin: 0 auto 0.5em auto;
+    padding: 0.5em 1em;
+  }
+  #treeHouseApiSkillPoints {
+    width: 90%;
+    margin: auto;
+  }
 }

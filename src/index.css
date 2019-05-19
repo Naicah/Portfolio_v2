@@ -48,6 +48,14 @@
 /* DESKTOP */
 @media only screen and (min-width: 768px) {
   :root {
+    --font-size-xs: 0.6em;
+    --font-size-s: 0.8em;
+    --font-size-m: 1.1em;
+    --font-size-l: 1.5em;
+    --font-size-xl: 2em;
+    --font-size-xxl: 2.5em;
+    --font-size-xxxl: 4em;
+
     --background-agave: url("./Media/desktop/agave.jpg");
     --background-blooming_blossom: url("./Media/desktop/blooming_blossom.jpg");
     --background-blue_sea: url("./Media/desktop/blue_sea.jpg");
@@ -115,6 +123,9 @@ p {
 }
 
 @media only screen and (min-width: 768px) {
+  .mainContainer {
+    padding-top: 5vh;
+  }
 }
 
 /* ================ TOOLTIPS ===================== */
@@ -174,10 +185,3 @@ p {
 }
 
 /* ================ PORTFOLIO ================= */
-
-/* @media only screen and (min-width: 768px) {
-  #portfolioCardContainer {
-    display: flex;
-    justify-content: space-evenly;
-  }
-} */

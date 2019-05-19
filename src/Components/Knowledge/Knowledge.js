@@ -10,14 +10,19 @@ function Knowledge() {
   return (
     <div className="mainContainer" id="knowledge">
       <h1>Knowledge</h1>
-      <div id="skillsContainer">
-        <Skills />
-        <TreeHouseAPI />
-      </div>
-      <div id="experienceContainer">
-        {experiences.map(experience => (
-          <Experience key={experience.name + experience.date} {...experience} />
-        ))}
+      <div className="skillsExperienceContainer">
+        <div id="skillsContainer">
+          <Skills />
+          <TreeHouseAPI />
+        </div>
+        <div id="experienceContainer">
+          {experiences.map(experience => (
+            <Experience
+              key={experience.name + experience.date}
+              {...experience}
+            />
+          ))}
+        </div>
       </div>
       <LinkButton url="Resume" text="See full resumé" id="linkButtonToResume" />
     </div>

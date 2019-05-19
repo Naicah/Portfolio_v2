@@ -136,3 +136,22 @@
   -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
   transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
 }
+
+@media only screen and (min-width: 768px) {
+  .contactForm {
+    height: 50vh;
+    margin: 2em auto;
+    justify-content: space-between;
+  }
+
+  .input {
+    max-width: 300px;
+    align-self: center;
+  }
+
+  #sendContactForm {
+    align-self: flex-end;
+    width: 10vw;
+    margin-right: 3em;
+  }
+}

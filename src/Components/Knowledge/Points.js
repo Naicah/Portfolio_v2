@@ -20,6 +20,11 @@ export const PointsDiv = styled.div`
       font-size: var(--font-size-m);
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.3em;
+    width: 45%;
+  }
 `;
 
 function Points({ points, skill }) {

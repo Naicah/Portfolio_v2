@@ -34,6 +34,26 @@ export const FooterDiv = styled.div`
   .tooltiptext {
     display: none;
   }
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--font-size-s);
+    .copyright {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-content: space-around;
+      padding: 1em;
+      width: 90%;
+    }
+    .links {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      padding: 0.5em;
+      width: 10%;
+      font-size: var(--font-size-l);
+    }
+  }
 `;
 
 function Footer() {
