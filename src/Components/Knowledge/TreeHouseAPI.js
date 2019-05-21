@@ -4,13 +4,12 @@ import BadgeContainer from "./BadgeContainer";
 
 function filter(obj, condition) {
   const result = {};
-
   Object.keys(obj).forEach(key => {
     if (condition(obj[key])) {
       result[key] = obj[key];
     }
   });
-
+  
   return result;
 }
 
@@ -19,73 +18,45 @@ class TreeHouseAPI extends Component {
     totalPoints: "",
     points: {},
     totalBadges: "",
-
-    badges: [
-      {
-        course: "",
-        badges: [
-          {
-            title: this.badgeSteps,
-            url: "",
-            icon_url: ""
-          },
-          {
-            title: "",
-            url: "",
-            icon_url: ""
-          }
-        ]
-      }
-    ]
+    courses: []
   };
 
-  getAllBadges = data => {
-    let result = [];
-    let badges = [];
+  extractCourses = data => {
+    let result = {};
+    
+    for (let i = 0; i < data.length; i++) {
 
-    let currentCourse = data[1]["courses"][0].title;
-    console.log("result: ", result);
-    console.log("badges: ", badges);
-    let i;
-    for (i = 1; i < data.length; i++) {
-      let course = data[i]["courses"][0].title;
-      let courseUrl = data[i]["courses"][0].url;
-      let skill = data[i]["courses"][1].title;
-      let skillUrl = data[i]["courses"][1].url;
-      let icon_url = data[i].icon_url;
-
-      if (course === currentCourse) {
-        badges.push({
-          title: skill,
-          url: skillUrl,
-          icon_url: icon_url
-        });
-      } else {
-        if (i !== 1) {
-          i = i - 1;
-          course = data[i]["courses"][0].title;
-          courseUrl = data[i]["courses"][0].url;
-          skill = data[i]["courses"][1].title;
-          skillUrl = data[i]["courses"][1].url;
-          icon_url = data[i].icon_url;
-        }
-        result.push({
-          course: course,
-          url: courseUrl,
-          badges: badges
-        });
-
-        currentCourse = course;
-        badges = [];
-        badges.push({
-          title: skill,
-          url: skillUrl,
-          icon_url: icon_url
-        });
+      let currentEntry = data[i];
+      const courses = currentEntry.courses;
+      if (courses.length === 0) {
+        continue;
       }
-      console.log("result", result);
+
+      const currentBadge = {
+        name: currentEntry.name,
+        url:  currentEntry.url,
+        icon_url: currentEntry.icon_url,
+      };
+
+      const currentCourses = courses.filter(obj => obj.url !== currentEntry.url);
+      
+      currentCourses.forEach(obj => {
+        let course = result[obj.title];
+        if (!course) {
+          course = {
+            name: obj.title,
+            url: obj.url,
+            badges: [],
+          }
+          result[course.name] = course;
+        }
+
+        course.badges.push(currentBadge);
+
+      });
     }
-    return result;
+
+    return Object.values(result);
   };
 
   componentDidMount() {
@@ -103,21 +74,21 @@ class TreeHouseAPI extends Component {
       const newPoints = filter(data.points, entry => entry > 0);
       delete newPoints.total;
 
-      // const badges = this.getAllBadges(data.badges);
-      const badges = [];
 
+      const courses = this.extractCourses(data.badges);
+      
       this.setState(prevState => ({
         ...prevState,
         points: newPoints,
         totalPoints: data.points.total,
         totalBadges: data.badges.length,
-        badges: badges
+        courses: courses
       }));
     });
   }
 
   render() {
-    const { points, totalPoints, totalBadges, badges } = this.state;
+    const { points, totalPoints, totalBadges, courses } = this.state;
 
     return (
       <div>
@@ -137,8 +108,8 @@ class TreeHouseAPI extends Component {
           <p>Total badges</p>
         </div>
 
-        {badges.map(object => (
-          <BadgeContainer object={object} key={object["course"]} />
+        {courses.map(course => (
+          <BadgeContainer course={course} key={course.name} />
         ))}
       </div>
     );

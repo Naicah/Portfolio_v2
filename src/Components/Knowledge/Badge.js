@@ -13,7 +13,7 @@ export const BadgeDiv = styled.div`
   }
 
   img {
-    height: 10vw;
+    height: 2em;
     margin-left: 0.2em;
   }
 `;
@@ -22,9 +22,9 @@ function Badge({ badge }) {
   return (
     <BadgeDiv>
       <div>
-        <a href={badge["url"]}>{badge["title"]}</a>
+        <a href={badge.url}>{badge.name}</a>
       </div>
-      <img src={badge["icon_url"]} alt="Badge icon" />
+      <img src={badge.icon_url} alt="Badge icon" />
     </BadgeDiv>
   );
 }

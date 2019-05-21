@@ -28,7 +28,7 @@ export const BadgeDiv = styled.div`
   }
 
   .badgesContainer img {
-    height: 8vw;
+    height: 2em;
     margin-left: 0.2em;
   }
 
@@ -38,32 +38,32 @@ export const BadgeDiv = styled.div`
   }
 `;
 
-function BadgeContainer({ object }) {
-  let course = object["course"];
-  let url = object["url"];
-  let badges = object["badges"];
+function BadgeContainer({ course }) {
+
+  let courseUrl = course.url;
+  let badges = course.badges;
 
   return (
     <BadgeDiv>
       <div className="overview">
         <div className="titleContainer">
-          <a href={url} target="blank" className="courseTitle">
-            {course}
+          <a href={courseUrl} target="blank" className="courseTitle">
+            {course.name}
           </a>
         </div>
         <div className="badgesContainer">
           {badges.map(badge => (
             <img
-              src={badge["icon_url"]}
+              src={badge.icon_url}
               alt="Badge icon"
-              key={badge["title"] + badge["icon_url"]}
+              key={badge.name + badge.icon_url}
             />
           ))}
         </div>
       </div>
       <div className="details">
         {badges.map(badge => (
-          <Badge badge={badge} key={course + badge["title"]} />
+          <Badge badge={badge} key={badge.name + badge.url} />
         ))}
       </div>
     </BadgeDiv>
