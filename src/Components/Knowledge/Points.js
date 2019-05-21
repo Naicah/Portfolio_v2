@@ -3,24 +3,14 @@ import styled from "styled-components";
 
 export const PointsDiv = styled.div`
   padding: 0.5em;
-  width: 50%;
+  width: 35%;
+  border-bottom: 1px solid white;
+  margin: 1.5% auto;
 
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  align-items: space-evenly;
 
-  .color {
-    align-item: flex-start;
-
-    div {
-      border: 1px solid black;
-      width: var(--font-size-s);
-      height: var(--font-size-s);
-      border-radius: 50%;
-      background-color: darkblue;
-      margin: 0.4em;
-    }
-  }
   .details {
     display: flex;
     flex-flow: column wrap;
@@ -30,14 +20,16 @@ export const PointsDiv = styled.div`
       font-size: var(--font-size-m);
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.3em;
+    width: 45%;
+  }
 `;
 
 function Points({ points, skill }) {
   return (
     <PointsDiv>
-      <div className="color">
-        <div />
-      </div>
       <div className="details">
         <div className="points">
           <p>{points}</p>

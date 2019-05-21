@@ -1,3 +1,3 @@
-import Interaction from "./Interaction";
+import Interaction,  {themes } from "./Interaction";
 
-export { Interaction };
+export { Interaction, themes };

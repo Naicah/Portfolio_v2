@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../../database";
-import { FlipCard } from "../General";
+// import { FlipCard } from "../General";
 
 function Portfolio() {
   return (

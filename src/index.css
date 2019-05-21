@@ -23,13 +23,48 @@
   --font-size-l: 2em;
   --font-size-xl: 3em;
   --font-size-xxl: 4em;
+  --font-size-xxxl: 6em;
 
   /* ============ BACKGROUND IMAGES =============== */
-  --background-img: url("./Media/blooming_blossom.jpg");
+  --background-img: var(--background-blooming_blossom);
+  --background-agave: url("./Media/phone/agave.jpg");
+  --background-blooming_blossom: url("./Media/phone/blooming_blossom.jpg");
+  --background-blue_sea: url("./Media/phone/blue_sea.jpg");
+  --background-cherry_blossom: url("./Media/phone/cherry_blossom.jpg");
+  --background-dandelion: url("./Media/phone/dandelion.jpg");
+  --background-movie_moment: url("./Media/phone/movie_moment.jpg");
+  --background-orchid: url("./Media/phone/orchid.jpg");
+  --background-white_cherry: url("./Media/phone/white_cherry.jpg");
 
   /* ============ BACKGROUND LOGOS =============== */
-  --logo: url("./Media/logo_name.png");
+  --logo: url("./Media/logo.png");
   --webpage-img: url("./Media/webpage.png");
+}
+
+/* ================================================ */
+/*            VARIABLES MEDIA QUERIES               */
+/* ================================================ */
+
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+  :root {
+    --font-size-xs: 0.6em;
+    --font-size-s: 0.8em;
+    --font-size-m: 1.1em;
+    --font-size-l: 1.5em;
+    --font-size-xl: 2em;
+    --font-size-xxl: 2.5em;
+    --font-size-xxxl: 4em;
+
+    --background-agave: url("./Media/desktop/agave.jpg");
+    --background-blooming_blossom: url("./Media/desktop/blooming_blossom.jpg");
+    --background-blue_sea: url("./Media/desktop/blue_sea.jpg");
+    --background-cherry_blossom: url("./Media/desktop/cherry_blossom.jpg");
+    --background-dandelion: url("./Media/desktop/dandelion.jpg");
+    --background-movie_moment: url("./Media/desktop/movie_moment.jpg");
+    --background-orchid: url("./Media/desktop/orchid.jpg");
+    --background-white_cherry: url("./Media/desktop/white_cherry.jpg");
+  }
 }
 
 /* ================================================ */
@@ -74,12 +109,23 @@ p {
   font-family: var(--font-stack-normal);
 }
 
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-xxxl);
+  }
+}
+
 /* ================ CONTAINERS ===================== */
 .mainContainer {
   max-width: 80vw;
   margin: 0 auto;
   padding-top: 10vh;
-  /* border: 1px solid black; */
+}
+
+@media only screen and (min-width: 768px) {
+  .mainContainer {
+    padding-top: 5vh;
+  }
 }
 
 /* ================ TOOLTIPS ===================== */
@@ -137,3 +183,5 @@ p {
   opacity: 0;
   border: 10px solid green;
 }
+
+/* ================ PORTFOLIO ================= */

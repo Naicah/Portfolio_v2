@@ -1,30 +1,65 @@
 import React, { Component } from "react";
 import Points from "./Points";
+import BadgeContainer from "./BadgeContainer";
 
-function filter(obj, predicate) {
+function filter(obj, condition) {
   const result = {};
-
   Object.keys(obj).forEach(key => {
-    if (predicate(obj[key])) {
+    if (condition(obj[key])) {
       result[key] = obj[key];
     }
   });
-
+  
   return result;
 }
 
 class TreeHouseAPI extends Component {
   state = {
     totalPoints: "",
-    pointsJavaScript: "",
-    databasesP: "",
-    designP: "",
-    developmentToolsP: "",
+    points: {},
     totalBadges: "",
-    points: {} // empty object... since waht you get is an object with points. haha yes. love your autofills
+    courses: []
   };
 
-  render() {
+  extractCourses = data => {
+    let result = {};
+    
+    for (let i = 0; i < data.length; i++) {
+
+      let currentEntry = data[i];
+      const courses = currentEntry.courses;
+      if (courses.length === 0) {
+        continue;
+      }
+
+      const currentBadge = {
+        name: currentEntry.name,
+        url:  currentEntry.url,
+        icon_url: currentEntry.icon_url,
+      };
+
+      const currentCourses = courses.filter(obj => obj.url !== currentEntry.url);
+      
+      currentCourses.forEach(obj => {
+        let course = result[obj.title];
+        if (!course) {
+          course = {
+            name: obj.title,
+            url: obj.url,
+            badges: [],
+          }
+          result[course.name] = course;
+        }
+
+        course.badges.push(currentBadge);
+
+      });
+    }
+
+    return Object.values(result);
+  };
+
+  componentDidMount() {
     async function getData() {
       //await the response of the fetch call
       let response = await fetch("https://teamtreehouse.com/ninahedman.json");
@@ -37,34 +72,45 @@ class TreeHouseAPI extends Component {
 
     getData().then(data => {
       const newPoints = filter(data.points, entry => entry > 0);
+      delete newPoints.total;
 
-      // So here it should filter
 
+      const courses = this.extractCourses(data.badges);
+      
       this.setState(prevState => ({
         ...prevState,
-        points: newPoints, // not sure why you had an array around the points object - i don't know either..tried 1000 different things
+        points: newPoints,
         totalPoints: data.points.total,
-        totalBadges: data.badges.length
+        totalBadges: data.badges.length,
+        courses: courses
       }));
     });
+  }
 
-    const { points, totalPoints, totalBadges } = this.state;
+  render() {
+    const { points, totalPoints, totalBadges, courses } = this.state;
 
     return (
-      <div className="mainContainer">
+      <div>
         <h3>TreeHouse Achievements</h3>
 
-        <div id="treeHouseApiTotalPoints">
-          <p className="totalPoints">Total points</p>
-          <p>{totalPoints}</p>
+        <div className="treeHouseApiTotal">
+          <p className="number">{totalPoints}</p>
+          <p>Total points</p>
         </div>
         <div id="treeHouseApiSkillPoints">
           {Object.keys(points).map(keyName => (
             <Points points={points[keyName]} skill={keyName} key={keyName} />
           ))}
         </div>
+        <div className="treeHouseApiTotal">
+          <p className="number">{totalBadges}</p>
+          <p>Total badges</p>
+        </div>
 
-        <div>Total badges: {totalBadges} </div>
+        {courses.map(course => (
+          <BadgeContainer course={course} key={course.name} />
+        ))}
       </div>
     );
   }

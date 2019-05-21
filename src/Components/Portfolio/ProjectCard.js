@@ -28,7 +28,7 @@ class ProjectCard extends Component {
       techniques
     } = this.props;
 
-    let bgImg = require("../../Media/" + String(img));
+    let bgImg = require("../../Media/phone/" + String(img));
 
     this.setState({
       back: (

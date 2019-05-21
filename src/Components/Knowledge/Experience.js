@@ -5,8 +5,6 @@ export const ExperienceDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
- 
-  
   margin: 1em 0;
 
   .experienceHeader {
@@ -32,8 +30,8 @@ export const ExperienceDiv = styled.div`
 
   .experienceDetails {
     margin-bottom: 0.3em;
-  border-radius: : 2px;
-  border-style: solid;
+    border-radius: 2px;
+    border-style: solid;
     padding: 0.8em;
   }
   .hidden {
@@ -42,7 +40,11 @@ export const ExperienceDiv = styled.div`
 
   :hover {
     cursor: pointer;
-      transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 45%;
   }
 `;
 

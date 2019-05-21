@@ -10,6 +10,13 @@ export const SkillsDiv = styled.div`
     flex-flow: row wrap;
     justify-content: space-around;
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.5em;
+    .codeSkillsContainer {
+      margin-top: 1em;
+    }
+  }
 `;
 
 function Skills() {

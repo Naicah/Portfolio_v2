@@ -67,4 +67,9 @@ export const ProjectCardDiv = styled.div`
       }
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    /* margin: 2em 0; */
+    max-width: 20%;
+  }
 `;

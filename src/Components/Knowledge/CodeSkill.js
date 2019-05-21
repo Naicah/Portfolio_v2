@@ -5,7 +5,7 @@ export const CodeSkillDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
 
-  justify-content: space-between;
+  justify-content: space-evenly;
   border: 2px solid white;
   text-align: center;
   width: 7em;
@@ -22,9 +22,17 @@ export const CodeSkillDiv = styled.div`
   }
   .codeSkillMain {
     font-weight: 800;
+    margin: 0.5em 0;
   }
   .codeSkillStyles {
     font-size: var(--font-size-xs);
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.5em 0.3em;
+    margin: 0.3em;
+    width: 6em;
+    height: 8em;
   }
 `;
 

@@ -13,7 +13,6 @@
 
 .quote div {
   max-width: 60vw;
-  /* min-width: 70vw; */
   min-height: 15vh;
   margin: auto;
   padding: 0.5em;
@@ -34,4 +33,36 @@
   max-width: 50%;
   float: right;
   margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .headerQuoteContainer {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    justify-content: flex-end;
+  }
+
+  #about h1 {
+    width: 33%;
+    margin: 0;
+  }
+  .quote {
+    margin: 5vh 0;
+    width: 33%;
+  }
+
+  .quote div {
+    max-width: 20vw;
+    min-height: 20vh;
+    margin: 0;
+  }
+
+  #aboutText {
+    width: 60vw;
+    margin: auto;
+  }
+  #linkButtonToContact {
+    margin-right: 10vw;
+    margin-top: 5vh;
+  }
 }
