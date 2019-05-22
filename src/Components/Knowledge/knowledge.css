@@ -5,6 +5,7 @@ h3 {
 #skillsContainer {
   margin: auto;
   background-color: var(--color-light-1);
+  padding-bottom: 1em;
 }
 
 #experienceContainer {
@@ -21,7 +22,7 @@ h3 {
   width: 80%;
   margin: 0 auto 1em auto;
   padding: 1em;
-  border-bottom: 2px solid white;
+  border: 2px solid white;
 }
 .number {
   font-size: var(--font-size-l);
@@ -30,6 +31,11 @@ h3 {
 #treeHouseApiSkillPoints {
   display: flex;
   flex-flow: row wrap;
+  width: 80%;
+  margin: 0 auto 1em auto;
+}
+.hidden {
+  display: none !important;
 }
 
 @media only screen and (min-width: 768px) {

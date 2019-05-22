@@ -35,7 +35,6 @@ function Skills() {
 export default Skills;
 
 /* 
-
 ------ ICONS -------
 JS: far fa-file-code
 CSS: fab fa-css3
