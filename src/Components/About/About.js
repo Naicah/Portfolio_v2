@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { LinkButton } from "../General";
 import ReactTypingEffect from "react-typing-effect";
 
 function About() {
+  const anchorElement = useRef(null);
+
+  useEffect(() => {
+    console.log(
+      "anchorElement",
+      anchorElement.current.getBoundingClientRect().top
+    );
+  });
   return (
-    <div className="mainContainer" id="about">
+    <div className="mainContainer" id="about" ref={anchorElement}>
       <div className="headerQuoteContainer">
         <h1>About</h1>
         <div className="quote">
@@ -56,15 +64,8 @@ function About() {
         </p>
       </div>
       <div id="linkButtonToContact">
-      <LinkButton
-          url="/#contact"
-          text="Let' s talk!"
-          
-        />
-      
-
+        <LinkButton url="/#contact" text="Let' s talk!" />
       </div>
-      
     </div>
   );
 }

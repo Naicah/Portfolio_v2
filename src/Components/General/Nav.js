@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import { NavDiv } from "./style";
 import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
@@ -12,6 +13,9 @@ class Nav extends Component {
     this.state = {
       menuOpen: false
     };
+    console.log("history: ", this.props.history.replace);
+
+    this.historyReplace = this.props.history.replace;
   }
 
   // This keeps your state in sync with the opening/closing of the menu
@@ -25,6 +29,39 @@ class Nav extends Component {
     this.setState({ menuOpen: !menuOpen });
   };
 
+  createNavHashLink(linkName) {
+    return this.createNavLink(linkName, NavHashLink);
+  }
+
+  createNavLink(linkName, LinkType = NavLink) {
+    let linkNameLower = linkName.toLowerCase();
+    let hashProps = {};
+
+    if (LinkType === NavHashLink) {
+      linkNameLower = "#" + linkNameLower;
+      hashProps = {
+        smooth: true,
+        isActive: () => window.location.hash === linkNameLower
+      };
+    }
+
+    return (
+      <LinkType
+        to={"/" + linkNameLower}
+        activeClassName="active"
+        className="navLink menu-item"
+        onClick={this.toggleMenu}
+        {...hashProps}
+      >
+        {linkName}
+      </LinkType>
+    );
+  }
+  componentDidMount() {
+    window.onscroll = () => {
+      this.historyReplace("#about");
+    };
+  }
   render() {
     return (
       <NavDiv>
@@ -39,69 +76,16 @@ class Nav extends Component {
           isOpen={this.state.menuOpen}
           onStateChange={state => this.handleStateChange(state)}
         >
-          <NavHashLink
-            smooth
-            exact
-            to="/#about"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            About
-          </NavHashLink>
-
-          <NavHashLink
-            smooth
-            exact
-            to="/#portfolio"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            Portfolio
-          </NavHashLink>
-
-          <NavHashLink
-            smooth
-            to="/#knowledge"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            Knowledge
-          </NavHashLink>
-
-          <NavLink
-            to="/resume"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            Resumé
-          </NavLink>
-
-          <NavLink
-            to="/interaction"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            Interaction
-          </NavLink>
-
-          <NavHashLink
-            smooth
-            to="/#contact"
-            activeClassName="active"
-            className="navLink menu-item"
-            onClick={this.toggleMenu}
-          >
-            Contact
-          </NavHashLink>
+          {this.createNavHashLink("About")}
+          {this.createNavHashLink("Portfolio")}
+          {this.createNavHashLink("Knowledge")}
+          {this.createNavLink("Resume")}
+          {this.createNavLink("Interaction")}
+          {this.createNavHashLink("Contact")}
         </Menu>
       </NavDiv>
     );
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
