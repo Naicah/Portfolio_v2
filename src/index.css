@@ -119,7 +119,7 @@ p {
 .mainContainer {
   max-width: 80vw;
   margin: 0 auto;
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 
 @media only screen and (min-width: 768px) {

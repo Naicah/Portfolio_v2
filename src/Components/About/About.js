@@ -55,11 +55,16 @@ function About() {
           even sewing that you have on your mind, let me know!
         </p>
       </div>
+      <div id="linkButtonToContact">
       <LinkButton
-        url="/#contact"
-        text="Let' s talk!"
-        id="linkButtonToContact"
-      />
+          url="/#contact"
+          text="Let' s talk!"
+          
+        />
+      
+
+      </div>
+      
     </div>
   );
 }
