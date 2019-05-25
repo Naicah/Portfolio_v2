@@ -1,16 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { LinkButton } from "../General";
 import ReactTypingEffect from "react-typing-effect";
+import { useElementLocation } from "../../locationTracker";
 
 function About() {
-  const anchorElement = useRef(null);
+  const anchorElement = useElementLocation();
 
-  useEffect(() => {
-    console.log(
-      "anchorElement",
-      anchorElement.current.getBoundingClientRect().top
-    );
-  });
   return (
     <div className="mainContainer" id="about" ref={anchorElement}>
       <div className="headerQuoteContainer">

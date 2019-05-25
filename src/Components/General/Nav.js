@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router";
+
 import { NavDiv } from "./style";
 import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { Logo } from "../General";
-
 import { stack as Menu } from "react-burger-menu";
 
 class Nav extends Component {
@@ -13,9 +12,7 @@ class Nav extends Component {
     this.state = {
       menuOpen: false
     };
-    console.log("history: ", this.props.history.replace);
-
-    this.historyReplace = this.props.history.replace;
+    // console.log("history: ", this.props.history.replace);
   }
 
   // This keeps your state in sync with the opening/closing of the menu
@@ -57,11 +54,7 @@ class Nav extends Component {
       </LinkType>
     );
   }
-  componentDidMount() {
-    window.onscroll = () => {
-      this.historyReplace("#about");
-    };
-  }
+
   render() {
     return (
       <NavDiv>
@@ -88,4 +81,4 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+export default Nav;
