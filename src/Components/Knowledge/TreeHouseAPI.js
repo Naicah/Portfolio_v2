@@ -18,7 +18,9 @@ class TreeHouseAPI extends Component {
     totalPoints: "",
     points: {},
     totalBadges: "",
-    courses: []
+    courses: [],
+    pointsHidden: true,
+    badgesHidden: true
   };
 
   extractCourses = data => {
@@ -59,6 +61,16 @@ class TreeHouseAPI extends Component {
     return Object.values(result);
   };
 
+  togglePoints = () => {
+    const { pointsHidden } = this.state;
+    this.setState({ pointsHidden: !pointsHidden });
+  };
+
+  toggleBadges = () => {
+    const { badgesHidden } = this.state;
+    this.setState({ badgesHidden: !badgesHidden });
+  };
+
   componentDidMount() {
     async function getData() {
       //await the response of the fetch call
@@ -88,29 +100,33 @@ class TreeHouseAPI extends Component {
   }
 
   render() {
-    const { points, totalPoints, totalBadges, courses } = this.state;
+    const { points, totalPoints, totalBadges, courses, pointsHidden, badgesHidden } = this.state;
 
     return (
       <div>
         <h3>TreeHouse Achievements</h3>
 
-        <div className="treeHouseApiTotal">
+        <div className="treeHouseApiTotal"  onClick={this.togglePoints}>
           <p className="number">{totalPoints}</p>
           <p>Total points</p>
         </div>
-        <div id="treeHouseApiSkillPoints">
+        <div id="treeHouseApiSkillPoints"
+        className={pointsHidden ? "hidden" : ""}
+        >
           {Object.keys(points).map(keyName => (
             <Points points={points[keyName]} skill={keyName} key={keyName} />
           ))}
         </div>
-        <div className="treeHouseApiTotal">
+        <div className="treeHouseApiTotal"  onClick={this.toggleBadges}>
           <p className="number">{totalBadges}</p>
           <p>Total badges</p>
         </div>
-
+<div   className={badgesHidden ? "hidden" : ""}
+       >
         {courses.map(course => (
           <BadgeContainer course={course} key={course.name} />
         ))}
+        </div>
       </div>
     );
   }

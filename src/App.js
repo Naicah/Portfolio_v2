@@ -1,8 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Helmet } from "react-helmet";
-
 
 // Style sheets
 import "./App.css";
@@ -14,26 +13,25 @@ import "./Components/Contact/contact.css";
 import { Nav, Footer, Main } from "./Components/General";
 
 import About from "./Components/About";
-import {Interaction, themes } from "./Components/Interaction";
-const themeLocalStorageKey = 'themeLocalStorageKey';
+import { Interaction, themes } from "./Components/Interaction";
+const themeLocalStorageKey = "themeLocalStorageKey";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    const themeID =  localStorage.getItem(themeLocalStorageKey) || 'blooming_blossom';
+    const themeID =
+      localStorage.getItem(themeLocalStorageKey) || "blooming_blossom";
     const defaultTheme = themes[themeID];
 
     this.state = {
-      themeID:themeID,
+      themeID: themeID,
       light1: defaultTheme.colorLight1,
-      dark1:defaultTheme.colorDark1,
+      dark1: defaultTheme.colorDark1,
       dark2: defaultTheme.colorDark2,
       accent: defaultTheme.colorAccent,
-      light2: defaultTheme.colorLight2,
+      light2: defaultTheme.colorLight2
     };
-    console.log('state id: ', this.state.themeID);
   }
-
 
   changeTheme = (themeID, theme) => {
     const {
@@ -57,9 +55,9 @@ class App extends Component {
   };
 
   render() {
-  return (
-    <BrowserRouter>
-    <Helmet>
+    return (
+      <BrowserRouter>
+        <Helmet>
           <style>
             {`
             :root {
@@ -74,20 +72,25 @@ class App extends Component {
             `}
           </style>
         </Helmet>
-      <div className="container">
-        
-        <Nav />
+        <div className="container">
+          <Nav counter={new Date()} />
 
-        <Switch>
-          <Route exact path="/resume" component={About} />
-          <Route exact path="/interaction" render={() => <Interaction changeTheme={this.changeTheme}/>} />
-          <Route path="/" component={Main}  />
-        </Switch>
+          <Switch>
+            <Route exact path="/resume" component={About} />
+            <Route
+              exact
+              path="/interaction"
+              render={() => <Interaction changeTheme={this.changeTheme} />}
+            />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
-}}
+            <Route path="/" component={Main} />
+          </Switch>
+
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
 
 export default App;

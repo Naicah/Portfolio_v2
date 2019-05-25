@@ -37,7 +37,7 @@
   --background-white_cherry: url("./Media/phone/white_cherry.jpg");
 
   /* ============ BACKGROUND LOGOS =============== */
-  --logo: url("./Media/logo.png");
+  --logo: url("./Media/logo_name.png");
   --webpage-img: url("./Media/webpage.png");
 }
 
@@ -119,7 +119,7 @@ p {
 .mainContainer {
   max-width: 80vw;
   margin: 0 auto;
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 
 @media only screen and (min-width: 768px) {

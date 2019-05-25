@@ -13,7 +13,7 @@ function InputField({ setStateValue, name, type, value }) {
 
   let inputClassName = "input";
 
-  if (value.trim() !== "") {
+  if (value && value.trim() !== "") {
     inputClassName += " input--filled";
   }
 

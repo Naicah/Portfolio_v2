@@ -1,10 +1,13 @@
 import React from "react";
 import { LinkButton } from "../General";
 import ReactTypingEffect from "react-typing-effect";
+import { useElementLocation } from "../../locationTracker";
 
 function About() {
+  const anchorElement = useElementLocation();
+
   return (
-    <div className="mainContainer" id="about">
+    <div className="mainContainer" id="about" ref={anchorElement}>
       <div className="headerQuoteContainer">
         <h1>About</h1>
         <div className="quote">
@@ -55,11 +58,9 @@ function About() {
           even sewing that you have on your mind, let me know!
         </p>
       </div>
-      <LinkButton
-        url="/#contact"
-        text="Let' s talk!"
-        id="linkButtonToContact"
-      />
+      <div id="linkButtonToContact">
+        <LinkButton url="/#contact" text="Let' s talk!" />
+      </div>
     </div>
   );
 }

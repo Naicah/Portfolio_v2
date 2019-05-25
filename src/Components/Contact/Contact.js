@@ -1,7 +1,8 @@
 // Slack icon: <i className="fab fa-slack"></i>
-import React, { Component } from "react";
+import React, { useState } from "react";
 import InputField from "./InputField";
 import { LinkButton } from "../General";
+import { useElementLocation } from "../../locationTracker";
 
 const inputs = [
   {
@@ -26,44 +27,52 @@ const inputs = [
   }
 ];
 
-class Contact extends Component {
-  state = {
+function useSetInputFieldValue() {
+  const [state, setState] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
     sent: false
-  };
+  });
 
-  makeSetInputFieldValue = () => (statePropertyName, value) => {
-    let newState = {
-      [statePropertyName]: value
-    };
+  return [
+    state,
+    (statePropertyName, value) => {
+      let newState = {
+        ...state,
+        [statePropertyName]: value
+      };
 
-    this.setState(newState);
-  };
+      setState(newState);
+    }
+  ];
+}
 
-  render() {
-    return (
-      <div className="mainContainer" id="contact">
-        <h1>Contact</h1>
+function Contact() {
+  const anchorElement = useElementLocation();
+  const [state, setInputFiledValue] = useSetInputFieldValue();
+  return (
+    <div className="mainContainer" id="contact" ref={anchorElement}>
+      <h1>Contact</h1>
 
-        <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
-          {inputs.map(props => (
+      <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
+        {inputs.map(props => {
+          return (
             <InputField
               {...props}
-              setStateValue={this.makeSetInputFieldValue()}
-              value={this.state[props.name.toLowerCase()]}
+              setStateValue={setInputFiledValue}
+              value={state[props.name.toLowerCase()]}
               key={props.name}
             />
-          ))}
+          );
+        })}
 
-          <LinkButton type="submit" url="" text="Send" id="sendContactForm" />
-        </form>
-      </div>
-    );
-  }
+        <LinkButton type="submit" url="" text="Send" id="sendContactForm" />
+      </form>
+    </div>
+  );
 }
 
 export default Contact;

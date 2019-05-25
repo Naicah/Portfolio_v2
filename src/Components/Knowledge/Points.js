@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 export const PointsDiv = styled.div`
   padding: 0.5em;
-  width: 35%;
+  width: 45%;
   border-bottom: 1px solid white;
-  margin: 1.5% auto;
+  margin: 0.5em auto;
 
   display: flex;
   flex-flow: row wrap;
-  align-items: space-evenly;
+  align-items: space-between;
 
   .details {
     display: flex;

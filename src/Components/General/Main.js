@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { withRouter } from "react-router";
+import { componentLocations } from "../../locationTracker";
+import debounce from "lodash/debounce";
 
 import Home from "../Home";
 import About from "../About";
@@ -6,7 +9,39 @@ import Portfolio from "../Portfolio";
 import Knowledge from "../Knowledge";
 import Contact from "../Contact";
 
-function Main() {
+function Main(props) {
+  function getCurrentElement() {
+    let scrollPosition = document.documentElement.scrollTop + 100;
+    let bestPosition;
+    let result;
+
+    Object.entries(componentLocations).forEach(
+      ([currentElement, currentElementPosition]) => {
+        if (scrollPosition >= currentElementPosition) {
+          if (!bestPosition || bestPosition < currentElementPosition) {
+            bestPosition = currentElementPosition;
+            result = currentElement;
+          }
+        }
+      }
+    );
+
+    if (result) {
+      props.history.replace("#" + result);
+    } else {
+      props.history.replace("");
+    }
+  }
+
+  useEffect(() => {
+    window.onscroll = debounce(getCurrentElement, 30);
+
+    // componentDidUnmount
+    return () => {
+      window.onscroll = null;
+    };
+  }, []);
+
   return (
     <div className="container">
       <Home />
@@ -18,4 +53,5 @@ function Main() {
   );
 }
 
-export default Main;
+// withRouter so that history is sent as props
+export default withRouter(Main);
