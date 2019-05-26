@@ -10,37 +10,36 @@ import Knowledge from "../Knowledge";
 import Contact from "../Contact";
 
 function Main(props) {
-  function getCurrentElement() {
-    let scrollPosition = document.documentElement.scrollTop + 100;
-    let bestPosition;
-    let result;
+  useEffect(() => {
+    function getCurrentElement() {
+      let scrollPosition = document.documentElement.scrollTop + 100;
+      let bestPosition;
+      let result;
 
-    Object.entries(componentLocations).forEach(
-      ([currentElement, currentElementPosition]) => {
-        if (scrollPosition >= currentElementPosition) {
-          if (!bestPosition || bestPosition < currentElementPosition) {
-            bestPosition = currentElementPosition;
-            result = currentElement;
+      Object.entries(componentLocations).forEach(
+        ([currentElement, currentElementPosition]) => {
+          if (scrollPosition >= currentElementPosition) {
+            if (!bestPosition || bestPosition < currentElementPosition) {
+              bestPosition = currentElementPosition;
+              result = currentElement;
+            }
           }
         }
+      );
+
+      if (result) {
+        props.history.replace("#" + result);
+      } else {
+        props.history.replace("");
       }
-    );
-
-    if (result) {
-      props.history.replace("#" + result);
-    } else {
-      props.history.replace("");
     }
-  }
-
-  useEffect(() => {
     window.onscroll = throttle(getCurrentElement, 200);
 
     // componentDidUnmount
     return () => {
       window.onscroll = null;
     };
-  }, []);
+  }, [props.history]);
 
   return (
     <div className="container">

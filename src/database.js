@@ -20,7 +20,6 @@ export const projects = [
     description:
       "Creates ads from JSON feed through Facebook Marketing API and keeps track of its statistics",
     links: [
-      { linkType: "webpage", url: "" },
       {
         linkType: "gitHub",
         url: "https://github.com/Naicah/Portfolio_v2"

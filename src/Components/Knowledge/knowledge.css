@@ -72,4 +72,8 @@ h3 {
     margin: 0 auto 0.5em auto;
     padding: 0.5em 1em;
   }
+
+  .treeHouseApiTotal:hover {
+    cursor: pointer;
+  }
 }

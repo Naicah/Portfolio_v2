@@ -21,30 +21,32 @@ export const BadgeDiv = styled.div`
     flex-flow: column wrap;
     justify-content: space-between;
 
+    :hover {
+      cursor: pointer;
+    }
+
     .courseTitle {
       font-size: var(--font-size-m);
     }
 
-    .badgesContainer  {
+    .badgesContainer {
       margin: 0.5em 0;
-  
-    img {
-      height: 2em;
-      margin-right: -0.6em;
-    }}
-    
+
+      img {
+        height: 2em;
+        margin-right: -0.6em;
+      }
+    }
   }
 
   .details {
     border-top: 1px solid white;
   }
-  
+
   .hidden {
     display: none;
-    
   }
 `;
-
 
 class BadgeContainer extends Component {
   constructor(props) {
@@ -60,36 +62,37 @@ class BadgeContainer extends Component {
   };
 
   render() {
-  const {course} = this.props;
-  const { hidden } = this.state;
-  let courseUrl = course.url;
-  let badges = course.badges;
+    const { course } = this.props;
+    const { hidden } = this.state;
+    let courseUrl = course.url;
+    let badges = course.badges;
 
-  return (
-    <BadgeDiv onClick={this.toggleDetails}>
-      <div className="overview">
-        <div className="titleContainer">
-          <a href={courseUrl} target="blank" className="courseTitle">
-            {course.name}
-          </a>
+    return (
+      <BadgeDiv onClick={this.toggleDetails}>
+        <div className="overview">
+          <div className="titleContainer">
+            <a href={courseUrl} target="blank" className="courseTitle">
+              {course.name}
+            </a>
+          </div>
+          <div className="badgesContainer">
+            {badges.map(badge => (
+              <img
+                src={badge.icon_url}
+                alt="Badge icon"
+                key={badge.name + badge.icon_url}
+              />
+            ))}
+          </div>
         </div>
-        <div className="badgesContainer">
+        <div className={hidden ? "details hidden" : "details"}>
           {badges.map(badge => (
-            <img
-              src={badge.icon_url}
-              alt="Badge icon"
-              key={badge.name + badge.icon_url}
-            />
+            <Badge badge={badge} key={badge.name + badge.url} />
           ))}
         </div>
-      </div>
-      <div className={hidden ? 'details hidden' : 'details'}>
-        {badges.map(badge => (
-          <Badge badge={badge} key={badge.name + badge.url} />
-        ))}
-      </div>
-    </BadgeDiv>
-  );
-}}
+      </BadgeDiv>
+    );
+  }
+}
 
 export default BadgeContainer;
