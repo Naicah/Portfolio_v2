@@ -73,7 +73,7 @@ class App extends Component {
           </style>
         </Helmet>
         <div className="container">
-          <Nav counter={new Date()} />
+          <Nav />
 
           <Switch>
             <Route exact path="/resume" component={About} />

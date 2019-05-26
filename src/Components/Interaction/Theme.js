@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 export const ThemeDiv = styled.div`
@@ -14,7 +14,7 @@ export const ThemeDiv = styled.div`
     height: 20vh;
     overflow: hidden;
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 
@@ -28,46 +28,51 @@ export const ThemeDiv = styled.div`
       height: 95%;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    margin: 1%;
+    min-width: 23%;
+    max-width: 23%;
+
+    .themeImg {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+     .colorPalettContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 13vh;
+  }
 `;
 
-function Theme({themeID,theme, changeTheme}) {
-    const {
-      img, 
-      name,
-      colorLight1,
-      colorDark1,
-      colorDark2,
-      colorAccent,
-      colorLight2
-    } = theme;
+function Theme({ themeID, theme, changeTheme }) {
+  const {
+    img,
+    name,
+    colorLight1,
+    colorDark1,
+    colorDark2,
+    colorAccent,
+    colorLight2
+  } = theme;
 
-    return (
-      <ThemeDiv onClick={() => changeTheme(themeID, theme)}>
-        
-        <div className="themeImg">
-          <img src={img} alt={name} />
-        </div>
-        <div className="colorPalettContainer">
-          <div
-            className="themeColor"
-            style={{ backgroundColor: colorLight1 }}
-          />
-
-          <div className="themeColor" style={{ backgroundColor: colorDark1 }} />
-
-          <div className="themeColor" style={{ backgroundColor: colorDark2 }} />
-          <div
-            className="themeColor"
-            style={{ backgroundColor: colorAccent }}
-          />
-          <div
-            className="themeColor"
-            style={{ backgroundColor: colorLight2 }}
-          />
-        </div>
-      </ThemeDiv>
-    );
-  }
-
+  return (
+    <ThemeDiv onClick={() => changeTheme(themeID, theme)}>
+      <div className="themeImg">
+        <img src={img} alt={name} />
+      </div>
+      <div className="colorPalettContainer">
+        <div className="themeColor" style={{ backgroundColor: colorLight1 }} />
+        <div className="themeColor" style={{ backgroundColor: colorDark1 }} />
+        <div className="themeColor" style={{ backgroundColor: colorDark2 }} />
+        <div className="themeColor" style={{ backgroundColor: colorAccent }} />
+        <div className="themeColor" style={{ backgroundColor: colorLight2 }} />
+      </div>
+    </ThemeDiv>
+  );
+}
 
 export default Theme;

@@ -21,6 +21,50 @@ export const projects = [
       { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
     ],
     techniques: ["Firebase"]
+  },
+  {
+    id: "sdgasd",
+    name: "Booking App",
+    img: "blue_sea.jpg",
+    description:
+      "Web based application to book rooms, see attendance and ETA for attending",
+    links: [
+      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
+    ],
+    techniques: ["Firebase"]
+  },
+  {
+    id: "sdgasadfsd",
+    name: "Booking App",
+    img: "blue_sea.jpg",
+    description:
+      "Web based application to book rooms, see attendance and ETA for attending",
+    links: [
+      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
+    ],
+    techniques: ["Firebase"]
+  },
+  {
+    id: "sdgdfsd",
+    name: "Booking App",
+    img: "blue_sea.jpg",
+    description:
+      "Web based application to book rooms, see attendance and ETA for attending",
+    links: [
+      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
+    ],
+    techniques: ["Firebase"]
+  },
+  {
+    id: "sadfsd",
+    name: "Booking App",
+    img: "blue_sea.jpg",
+    description:
+      "Web based application to book rooms, see attendance and ETA for attending",
+    links: [
+      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
+    ],
+    techniques: ["Firebase"]
   }
 ];
 

@@ -1,36 +1,29 @@
-import React, { Component } from "react";
-
+import React, { useState } from "react";
 import { NavDiv } from "./style";
 import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { Logo } from "../General";
 import { stack as Menu } from "react-burger-menu";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuOpen: false
-    };
-    // console.log("history: ", this.props.history.replace);
-  }
+function Nav() {
+  const [menuOpen, setmenuOpen] = useState(false);
 
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
-  handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen });
+  function handleStateChange(state) {
+    setmenuOpen(state.isOpen);
   }
 
-  toggleMenu = () => {
-    const { menuOpen } = this.state;
-    this.setState({ menuOpen: !menuOpen });
+  const toggleMenu = () => {
+    setmenuOpen(!menuOpen);
   };
 
-  createNavHashLink(linkName) {
-    return this.createNavLink(linkName, NavHashLink);
+  function createNavHashLink(linkName) {
+    return createNavLink(linkName, NavHashLink);
   }
 
-  createNavLink(linkName, LinkType = NavLink) {
+  function createNavLink(linkName, LinkType = NavLink) {
     let linkNameLower = linkName.toLowerCase();
     let hashProps = {};
 
@@ -47,7 +40,7 @@ class Nav extends Component {
         to={"/" + linkNameLower}
         activeClassName="active"
         className="navLink menu-item"
-        onClick={this.toggleMenu}
+        onClick={toggleMenu}
         {...hashProps}
       >
         {linkName}
@@ -55,30 +48,28 @@ class Nav extends Component {
     );
   }
 
-  render() {
-    return (
-      <NavDiv>
-        <div id="logoContainer">
-          <NavHashLink smooth exact to="/#home">
-            <Logo id="logo" />
-          </NavHashLink>
-        </div>
+  return (
+    <NavDiv>
+      <div id="logoContainer">
+        <NavHashLink smooth exact to="/#home">
+          <Logo id="logo" />
+        </NavHashLink>
+      </div>
 
-        <Menu
-          right
-          isOpen={this.state.menuOpen}
-          onStateChange={state => this.handleStateChange(state)}
-        >
-          {this.createNavHashLink("About")}
-          {this.createNavHashLink("Portfolio")}
-          {this.createNavHashLink("Knowledge")}
-          {this.createNavLink("Resume")}
-          {this.createNavLink("Interaction")}
-          {this.createNavHashLink("Contact")}
-        </Menu>
-      </NavDiv>
-    );
-  }
+      <Menu
+        right
+        isOpen={menuOpen}
+        onStateChange={menuOpen => handleStateChange(menuOpen)}
+      >
+        {createNavHashLink("About")}
+        {createNavHashLink("Portfolio")}
+        {createNavHashLink("Knowledge")}
+        {createNavLink("Resume")}
+        {createNavLink("Interaction")}
+        {createNavHashLink("Contact")}
+      </Menu>
+    </NavDiv>
+  );
 }
 
 export default Nav;

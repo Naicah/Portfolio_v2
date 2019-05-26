@@ -185,3 +185,22 @@ p {
 }
 
 /* ================ PORTFOLIO ================= */
+
+@media only screen and (min-width: 768px) {
+  #portfolioCardContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+}
+
+/* ================ INTERACTION ================= */
+
+@media only screen and (min-width: 768px) {
+  #themeCardContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-bottom: 2em;
+  }
+}

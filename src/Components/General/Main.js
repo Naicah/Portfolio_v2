@@ -11,8 +11,6 @@ import Contact from "../Contact";
 
 function Main(props) {
   function getCurrentElement() {
-    console.log("getCurrentElement");
-
     let scrollPosition = document.documentElement.scrollTop + 100;
     let bestPosition;
     let result;

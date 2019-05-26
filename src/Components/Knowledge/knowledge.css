@@ -65,12 +65,7 @@ h3 {
   }
 
   .treeHouseApiTotal {
-    width: 90%;
     margin: 0 auto 0.5em auto;
     padding: 0.5em 1em;
-  }
-  #treeHouseApiSkillPoints {
-    width: 90%;
-    margin: auto;
   }
 }

@@ -69,7 +69,8 @@ export const ProjectCardDiv = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    /* margin: 2em 0; */
-    max-width: 20%;
+    margin: 1%;
+    min-width: 23%;
+    max-width: 23%;
   }
 `;
