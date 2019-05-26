@@ -61,7 +61,7 @@ function Nav() {
           {createNavHashLink("Portfolio")}
           {createNavHashLink("Knowledge")}
           {createNavLink("Resume")}
-          {createNavLink("Interaction")}
+          {createNavLink("Theme")}
           {createNavHashLink("Contact")}
         </Menu>
       );
@@ -72,7 +72,7 @@ function Nav() {
           {createNavHashLink("Portfolio")}
           {createNavHashLink("Knowledge")}
           {createNavLink("Resume")}
-          {createNavLink("Interaction")}
+          {createNavLink("Theme")}
           {createNavHashLink("Contact")}
         </div>
       );

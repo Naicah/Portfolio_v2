@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const ThemeDiv = styled.div`
+export const ColorPalletDiv = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 5vh;
 
@@ -40,15 +40,16 @@ export const ThemeDiv = styled.div`
         width: 100%;
       }
     }
-     .colorPalettContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 13vh;
+    .colorPalettContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: 13vh;
+    }
   }
 `;
 
-function Theme({ themeID, theme, changeTheme }) {
+function ColorPallet({ themeID, theme, changeTheme }) {
   const {
     img,
     name,
@@ -60,7 +61,7 @@ function Theme({ themeID, theme, changeTheme }) {
   } = theme;
 
   return (
-    <ThemeDiv onClick={() => changeTheme(themeID, theme)}>
+    <ColorPalletDiv onClick={() => changeTheme(themeID, theme)}>
       <div className="themeImg">
         <img src={img} alt={name} />
       </div>
@@ -71,8 +72,8 @@ function Theme({ themeID, theme, changeTheme }) {
         <div className="themeColor" style={{ backgroundColor: colorAccent }} />
         <div className="themeColor" style={{ backgroundColor: colorLight2 }} />
       </div>
-    </ThemeDiv>
+    </ColorPalletDiv>
   );
 }
 
-export default Theme;
+export default ColorPallet;

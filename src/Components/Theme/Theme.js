@@ -1,5 +1,5 @@
 import React from "react";
-import Theme from "./Theme";
+import ColorPallet from "./ColorPallet";
 import agave from "../../Media/thumbnails/agave.jpg";
 import blue_sea from "../../Media/thumbnails/blue_sea.jpg";
 import blooming_blossom from "../../Media/thumbnails/blooming_blossom.jpg";
@@ -9,14 +9,15 @@ import movie_moment from "../../Media/thumbnails/movie_moment.jpg";
 import orchid from "../../Media/thumbnails/orchid.jpg";
 import white_cherry from "../../Media/thumbnails/white_cherry.jpg";
 
-function Interaction(props) {
+function Theme(props) {
   return (
     <div className="mainContainer" id="interction">
-      <h1>Interaction</h1>
+      <h1>Theme</h1>
+      <h3>Change theme and color pallet for the whole application</h3>
       <div id="themeCardContainer">
         {Object.entries(themes).map(([themeID, theme]) => {
           return (
-            <Theme
+            <ColorPallet
               themeID={themeID}
               changeTheme={props.changeTheme}
               key={themeID}
@@ -29,7 +30,7 @@ function Interaction(props) {
   );
 }
 
-export default Interaction;
+export default Theme;
 
 export const themes = {
   agave: {

@@ -12,7 +12,7 @@ import "./Components/Contact/contact.css";
 // App components
 import { Nav, Footer, Main } from "./Components/General";
 import Resume from "./Components/Resume";
-import { Interaction, themes } from "./Components/Interaction";
+import { Theme, themes } from "./Components/Theme";
 const themeLocalStorageKey = "themeLocalStorageKey";
 
 class App extends Component {
@@ -78,8 +78,8 @@ class App extends Component {
             <Route exact path="/resume" component={Resume} />
             <Route
               exact
-              path="/interaction"
-              render={() => <Interaction changeTheme={this.changeTheme} />}
+              path="/theme"
+              render={() => <Theme changeTheme={this.changeTheme} />}
             />
 
             <Route path="/" component={Main} />
