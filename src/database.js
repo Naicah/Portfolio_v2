@@ -91,7 +91,7 @@ export const experiences = [
   },
   {
     type: "job",
-    filter: "IT",
+    filter: "",
     name: "Administratör sjukvårdsskador ",
     at: "Folksam (GoldWare Lankonsult)",
     date: "sep 2017 – nov 2017",

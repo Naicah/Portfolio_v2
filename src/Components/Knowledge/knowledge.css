@@ -58,6 +58,10 @@ h3 {
   }
   #experienceContainer {
     width: 65%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    height: 100vh;
   }
   #linkButtonToResume {
     max-width: 15vw;
