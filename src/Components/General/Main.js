@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { withRouter } from "react-router";
 import { componentLocations } from "../../locationTracker";
-import debounce from "lodash/debounce";
+import throttle from "lodash/throttle";
 
 import Home from "../Home";
 import About from "../About";
@@ -11,6 +11,8 @@ import Contact from "../Contact";
 
 function Main(props) {
   function getCurrentElement() {
+    console.log("getCurrentElement");
+
     let scrollPosition = document.documentElement.scrollTop + 100;
     let bestPosition;
     let result;
@@ -34,7 +36,7 @@ function Main(props) {
   }
 
   useEffect(() => {
-    window.onscroll = debounce(getCurrentElement, 30);
+    window.onscroll = throttle(getCurrentElement, 200);
 
     // componentDidUnmount
     return () => {
