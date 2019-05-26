@@ -8,7 +8,6 @@ export const TechniqueIconDiv = styled.div`
 
   .tooltip .tooltiptext {
     width: 90px;
-    margin-left: -45px;
   }
 `;
 

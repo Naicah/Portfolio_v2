@@ -1,43 +1,27 @@
-import React, { Component } from "react";
+import React from "react";
 import { ProjectCardDiv } from "./style.js";
 import { LinkIcon } from "../General";
 import TechniqueIcon from "./TechniqueIcon.js";
 
-class ProjectCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flipped: false,
-      front: "",
-      back: ""
-    };
-  }
+function ProjectCard({
+  id,
+  name,
+  img,
+  description,
+  projectPage,
+  links,
+  techniques
+}) {
+  let bgImg = require("../../Media/phone/" + String(img));
 
-  flipCard = () => {
-    const { flipped } = this.state;
-    this.setState({ flipped: !flipped });
-  };
-  componentDidMount() {
-    const {
-      id,
-      name,
-      img,
-      description,
-      projectPage,
-      links,
-      techniques
-    } = this.props;
-
-    let bgImg = require("../../Media/phone/" + String(img));
-
-    this.setState({
-      back: (
-        <div className="projectCardBack" key="back">
+  return (
+    <ProjectCardDiv>
+      <div className="card-body">
+        <div className="card-side side-back ">
           <div>
             <h3>{name}</h3>
             <p>{description}</p>
           </div>
-
           <div>
             <div id="techniqueIcons">
               {techniques.map(technique => (
@@ -58,34 +42,19 @@ class ProjectCard extends Component {
             </div>
           </div>
         </div>
-      )
-    });
 
-    this.setState({
-      front: (
         <div
-          className="projectCardFront"
-          style={{ backgroundImage: "url(" + bgImg + ")" }}
-          key="front"
-        />
-      )
-    });
-  }
-
-  render() {
-    const { flipped, back, front } = this.state;
-    const { id } = this.props;
-    let card = front;
-    if (flipped) {
-      card = back;
-    }
-
-    return (
-      <ProjectCardDiv id={id + "projectCardDiv"} onClick={this.flipCard}>
-        {card}
-      </ProjectCardDiv>
-    );
-  }
+          className="card-side side-front"
+          style={{
+            backgroundImage: "url(" + bgImg + ")",
+            backgroundSize: "cover"
+          }}
+        >
+          <div className="projectCardFront" key="front" />
+        </div>
+      </div>
+    </ProjectCardDiv>
+  );
 }
 
 export default ProjectCard;

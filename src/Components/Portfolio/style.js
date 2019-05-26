@@ -1,40 +1,56 @@
 import styled from "styled-components";
 
 export const ProjectCardDiv = styled.div`
-  /* ------------------ GENERAL ---------------------*/
-  -webkit-box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
-  -moz-box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
-  box-shadow: 3px 3px 10px 0px rgba(199, 138, 149, 1);
-
   margin: 2em auto;
   max-width: 80%;
   height: 35vh;
 
-  /* ------------------ HOVER ---------------------*/
+  /*- Card body -*/
+  .card-body {
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.6s linear;
+  }
+
+  /*- Flipping the card -*/
   :hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    .card-body {
+      transform: rotateY(180deg);
+    }
   }
 
-  /* ------------------ FRONT ---------------------*/
-  .projectCardFront {
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    padding: 0;
+  :hover {
+    .card-body {
+      .side-front {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s ease-in, visibility 0.75s linear;
+      }
+    }
   }
 
-  /* ------------------ BACK ---------------------*/
-  .projectCardBack {
-    height: 100%;
+  /*- Card sides -*/
+  .card-side {
+    position: absolute;
     width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1),
+      0 2px 15px rgba(0, 0, 0, 0.07);
+  }
+
+  /*- Front side -*/
+  .side-front {
+    /* background-image: {dandelion}; */
+  }
+  /*- Back side -*/
+  .side-back {
+    transform: rotateY(180deg);
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     padding: 0.8em;
     text-align: center;
     background-color: var(--color-light-1);
-    transition: transform 0.2s;
 
     div div {
       display: flex;
@@ -64,6 +80,7 @@ export const ProjectCardDiv = styled.div`
         color: var(--color-light-1);
         background-color: var(--color-dark-1);
         border: none;
+        cursor: pointer;
       }
     }
   }

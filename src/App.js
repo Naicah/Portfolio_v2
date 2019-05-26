@@ -11,8 +11,7 @@ import "./Components/Contact/contact.css";
 
 // App components
 import { Nav, Footer, Main } from "./Components/General";
-
-import About from "./Components/About";
+import Resume from "./Components/Resume";
 import { Interaction, themes } from "./Components/Interaction";
 const themeLocalStorageKey = "themeLocalStorageKey";
 
@@ -76,7 +75,7 @@ class App extends Component {
           <Nav />
 
           <Switch>
-            <Route exact path="/resume" component={About} />
+            <Route exact path="/resume" component={Resume} />
             <Route
               exact
               path="/interaction"

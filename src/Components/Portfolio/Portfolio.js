@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../../database";
 import { useElementLocation } from "../../locationTracker";
-// import { FlipCard } from "../General";
 
 function Portfolio() {
   const anchorElement = useElementLocation();
@@ -11,7 +10,6 @@ function Portfolio() {
   return (
     <div className="mainContainer" id="portfolio" ref={anchorElement}>
       <h1>Portfolio</h1>
-      {/* <FlipCard /> */}
 
       <div id="portfolioCardContainer">
         {projects.map(project => (
