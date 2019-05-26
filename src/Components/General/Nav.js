@@ -67,7 +67,7 @@ function Nav() {
       );
     } else {
       return (
-        <div>
+        <div id="menuIconContainer">
           {createNavHashLink("About")}
           {createNavHashLink("Portfolio")}
           {createNavHashLink("Knowledge")}

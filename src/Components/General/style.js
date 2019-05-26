@@ -9,7 +9,6 @@ export const NavDiv = styled.div`
   position: sticky;
   top: 0px;
   z-index: 100;
-  /* padding: 0 1em; */
 
   #logoContainer {
     height: 100%;
@@ -18,15 +17,6 @@ export const NavDiv = styled.div`
     #logo {
       height: 100%;
       background-size: 100%;
-    }
-  }
-
-  #menuIconContainer {
-    display: flex;
-    align-items: center;
-    i {
-      color: var(--color-light-1);
-      font-size: var(--font-size-l);
     }
   }
 
@@ -123,16 +113,15 @@ Note: Beware of modifying this element as it can break the animations - you shou
   @media only screen and (min-width: 768px) {
     justify-content: space-evenly;
     flex-flow: column wrap;
-    #logoContainer {
-      a {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    div {
+
+    #menuIconContainer {
+      width: 82vw;
+      height: 100%;
       display: flex;
-      height: 99%;
-      a {
+      justify-content: space-evenly;
+
+      .navLink {
+        height: 99%;
         align-items: center;
       }
     }
