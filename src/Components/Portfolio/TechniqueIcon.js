@@ -24,6 +24,14 @@ function TechniqueIcon({ technique }) {
       icon = "fas fa-code-branch";
       tooltip = "Firebase";
       break;
+    case "vue":
+      icon = "fab fa-vuejs";
+      tooltip = "Vue";
+      break;
+    case "koa":
+      icon = "fab fa-node-js";
+      tooltip = "Koa";
+      break;
     default:
       icon = "";
       tooltip = "";

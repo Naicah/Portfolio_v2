@@ -1,70 +1,88 @@
 export const projects = [
   {
-    id: "1",
-    name: "Booking App",
-    img: "blue_sea.jpg",
-    description:
-      "Web based application to book rooms, see attendance and ETA for attending",
+    id: "portfolio_v2",
+    name: "Portfolio version 2",
+    img: "portfolio_v2.jpg",
+    description: "Second version of my protfolio (this page)",
     links: [
       { linkType: "webpage", url: "" },
+      {
+        linkType: "gitHub",
+        url: "https://github.com/Naicah/Portfolio_v2"
+      }
+    ],
+    techniques: ["React"]
+  },
+  {
+    id: "workbuster",
+    name: "Retargeting Workbuster",
+    img: "workbuster.jpg",
+    description:
+      "Creates ads from JSON feed through Facebook Marketing API and keeps track of its statistics",
+    links: [
+      { linkType: "webpage", url: "" },
+      {
+        linkType: "gitHub",
+        url: "https://github.com/Naicah/Portfolio_v2"
+      }
+    ],
+    techniques: ["Vue", "Koa"]
+  },
+  {
+    id: "portfolio",
+    name: "Portfolio",
+    img: "portfolio.jpg",
+    description: "First version of my protfolio",
+    links: [
+      { linkType: "webpage", url: "http://ninahedman.surge.sh/" },
+      {
+        linkType: "gitHub",
+        url: "https://github.com/Naicah/Portfolio"
+      }
+    ],
+    techniques: []
+  },
+
+  {
+    id: "grex_bookingapp",
+    name: "Booking App",
+    img: "grex_bookingapp.jpg",
+    description:
+      "Web based application to book rooms, see attendance and ETA for attending people",
+    links: [
       { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
     ],
     techniques: ["React", "Firebase"]
   },
   {
-    id: "2asd",
-    name: "Booking App",
-    img: "blue_sea.jpg",
-    description:
-      "Web based application to book rooms, see attendance and ETA for attending",
+    id: "quire_by_capricorn",
+    name: "Quire",
+    img: "quire_by_capricorn.jpg",
+    description: "Web based text editor",
     links: [
-      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
+      {
+        linkType: "gitHub",
+        url: "https://github.com/Naicah/Quire-by-Capricorn"
+      }
     ],
-    techniques: ["Firebase"]
+    techniques: []
   },
   {
-    id: "sdgasd",
-    name: "Booking App",
-    img: "white_cherry.jpg",
-    description:
-      "Web based application to book rooms, see attendance and ETA for attending",
-    links: [
-      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
-    ],
-    techniques: ["Firebase"]
+    id: "javascript_genius",
+    name: "JavaScript genius",
+    img: "javascript_genius.jpg",
+    description: "Landingpage for a fictional course at KYH",
+    links: [],
+    techniques: []
   },
   {
-    id: "sdgasadfsd",
-    name: "Booking App",
-    img: "dandelion.jpg",
+    id: "rueda_de_casino",
+    name: "Rueda De Casino",
+    img: "rueda_de_casino.jpg",
     description:
-      "Web based application to book rooms, see attendance and ETA for attending",
-    links: [
-      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
-    ],
-    techniques: ["Firebase"]
-  },
-  {
-    id: "sdgdfsd",
-    name: "Booking App",
-    img: "blue_sea.jpg",
-    description:
-      "Web based application to book rooms, see attendance and ETA for attending",
-    links: [
-      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
-    ],
-    techniques: ["Firebase"]
-  },
-  {
-    id: "sadfsd",
-    name: "Booking App",
-    img: "blue_sea.jpg",
-    description:
-      "Web based application to book rooms, see attendance and ETA for attending",
-    links: [
-      { linkType: "gitHub", url: "https://github.com/pazsea/bookingapp" }
-    ],
-    techniques: ["Firebase"]
+      "Website where one can find information about turns and events regarding the cuban salsa style Rueda de Casino",
+    links: [],
+    techniques: []
   }
 ];
 

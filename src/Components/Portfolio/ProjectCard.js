@@ -12,7 +12,7 @@ function ProjectCard({
   links,
   techniques
 }) {
-  let bgImg = require("../../Media/phone/" + String(img));
+  let bgImg = require("../../Media/projects/" + String(img));
 
   return (
     <ProjectCardDiv>
