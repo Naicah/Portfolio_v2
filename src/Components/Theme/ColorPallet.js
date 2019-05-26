@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 export const ColorPalletDiv = styled.div`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: ${({ isActive }) =>
+    isActive
+      ? "0 6px 10px 0 var(--color-dark-1), 0 8px 30px 0 var(--color-dark-1)"
+      : "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"};
+
   margin-bottom: 5vh;
 
   :hover {
@@ -49,7 +53,15 @@ export const ColorPalletDiv = styled.div`
   }
 `;
 
-function ColorPallet({ themeID, theme, changeTheme }) {
+// function MainContent() {
+//   return (
+//     <div className="container">
+//       <div>Test example</div>
+//     </div>
+//   );
+// }
+
+function ColorPallet({ themeID, theme, changeTheme, isActive }) {
   const {
     img,
     name,
@@ -59,18 +71,32 @@ function ColorPallet({ themeID, theme, changeTheme }) {
     colorAccent,
     colorLight2
   } = theme;
-
   return (
-    <ColorPalletDiv onClick={() => changeTheme(themeID, theme)}>
-      <div className="themeImg">
-        <img src={img} alt={name} />
-      </div>
-      <div className="colorPalettContainer">
-        <div className="themeColor" style={{ backgroundColor: colorLight1 }} />
-        <div className="themeColor" style={{ backgroundColor: colorDark1 }} />
-        <div className="themeColor" style={{ backgroundColor: colorDark2 }} />
-        <div className="themeColor" style={{ backgroundColor: colorAccent }} />
-        <div className="themeColor" style={{ backgroundColor: colorLight2 }} />
+    <ColorPalletDiv
+      isActive={isActive}
+      onClick={() => changeTheme(themeID, theme)}
+    >
+      {/* <MainContent /> */}
+      <div className="active">
+        <div className="themeImg">
+          <img src={img} alt={name} />
+        </div>
+        <div className="colorPalettContainer">
+          <div
+            className="themeColor"
+            style={{ backgroundColor: colorLight1 }}
+          />
+          <div className="themeColor" style={{ backgroundColor: colorDark1 }} />
+          <div className="themeColor" style={{ backgroundColor: colorDark2 }} />
+          <div
+            className="themeColor"
+            style={{ backgroundColor: colorAccent }}
+          />
+          <div
+            className="themeColor"
+            style={{ backgroundColor: colorLight2 }}
+          />
+        </div>
       </div>
     </ColorPalletDiv>
   );

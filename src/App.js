@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import { Helmet } from "react-helmet";
 
 // Style sheets
@@ -79,7 +78,12 @@ class App extends Component {
             <Route
               exact
               path="/theme"
-              render={() => <Theme changeTheme={this.changeTheme} />}
+              render={() => (
+                <Theme
+                  changeTheme={this.changeTheme}
+                  selectedTheme={this.state.themeID}
+                />
+              )}
             />
 
             <Route path="/" component={Main} />

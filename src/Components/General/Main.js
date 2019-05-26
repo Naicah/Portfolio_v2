@@ -33,7 +33,7 @@ function Main(props) {
         props.history.replace("");
       }
     }
-    window.onscroll = throttle(getCurrentElement, 200);
+    window.onscroll = throttle(getCurrentElement, 800);
 
     // componentDidUnmount
     return () => {

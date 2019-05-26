@@ -22,6 +22,7 @@ function Theme(props) {
               changeTheme={props.changeTheme}
               key={themeID}
               theme={theme}
+              isActive={props.selectedTheme === themeID}
             />
           );
         })}

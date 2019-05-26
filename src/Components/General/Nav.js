@@ -5,6 +5,7 @@ import { NavHashLink } from "react-router-hash-link";
 import { Logo } from "../General";
 import { stack as Menu } from "react-burger-menu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import deburr from "lodash/deburr";
 
 function Nav() {
   const [menuOpen, setmenuOpen] = useState(false);
@@ -25,7 +26,8 @@ function Nav() {
   }
 
   function createNavLink(linkName, LinkType = NavLink) {
-    let linkNameLower = linkName.toLowerCase();
+    let linkNameLower = deburr(linkName.toLowerCase());
+
     let hashProps = {};
 
     if (LinkType === NavHashLink) {
@@ -60,7 +62,7 @@ function Nav() {
           {createNavHashLink("About")}
           {createNavHashLink("Portfolio")}
           {createNavHashLink("Knowledge")}
-          {createNavLink("Resume")}
+          {createNavLink("Resumé")}
           {createNavLink("Theme")}
           {createNavHashLink("Contact")}
         </Menu>
@@ -71,7 +73,7 @@ function Nav() {
           {createNavHashLink("About")}
           {createNavHashLink("Portfolio")}
           {createNavHashLink("Knowledge")}
-          {createNavLink("Resume")}
+          {createNavLink("Resumé")}
           {createNavLink("Theme")}
           {createNavHashLink("Contact")}
         </div>
