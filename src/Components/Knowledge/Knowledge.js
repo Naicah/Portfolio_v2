@@ -19,12 +19,14 @@ function Knowledge() {
           <TreeHouseAPI />
         </div>
         <div id="experienceContainer">
-          {experiences.map(experience => (
-            <Experience
-              key={experience.name + experience.date}
-              {...experience}
-            />
-          ))}
+          {experiences
+            .filter(experience => experience.filter === "IT")
+            .map(experience => (
+              <Experience
+                key={experience.name + experience.date}
+                {...experience}
+              />
+            ))}
         </div>
       </div>
       <LinkButton url="Resume" text="See full resumé" id="linkButtonToResume" />
