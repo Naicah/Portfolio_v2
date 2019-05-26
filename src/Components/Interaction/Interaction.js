@@ -9,14 +9,9 @@ import movie_moment from "../../Media/thumbnails/movie_moment.jpg";
 import orchid from "../../Media/thumbnails/orchid.jpg";
 import white_cherry from "../../Media/thumbnails/white_cherry.jpg";
 
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-
 function Interaction(props) {
-  const matches = useMediaQuery("(min-width:600px)");
-
   return (
     <div className="mainContainer" id="interction">
-      <span>{`(min-width:600px) matches: ${matches}`}</span>
       <h1>Interaction</h1>
       <div id="themeCardContainer">
         {Object.entries(themes).map(([themeID, theme]) => {

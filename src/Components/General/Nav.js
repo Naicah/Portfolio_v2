@@ -8,6 +8,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 function Nav() {
   const [menuOpen, setmenuOpen] = useState(false);
+  const isSmallDevice = useMediaQuery("(max-width:768px)");
 
   // This keeps your state in sync with the opening/closing of the menu
   // via the default means, e.g. clicking the X, pressing the ESC key etc.
@@ -39,13 +40,43 @@ function Nav() {
       <LinkType
         to={"/" + linkNameLower}
         activeClassName="active"
-        className="navLink menu-item"
+        className="navLink"
         onClick={toggleMenu}
         {...hashProps}
       >
         {linkName}
       </LinkType>
     );
+  }
+
+  function createNav() {
+    if (isSmallDevice) {
+      return (
+        <Menu
+          right
+          isOpen={menuOpen}
+          onStateChange={menuOpen => handleStateChange(menuOpen)}
+        >
+          {createNavHashLink("About")}
+          {createNavHashLink("Portfolio")}
+          {createNavHashLink("Knowledge")}
+          {createNavLink("Resume")}
+          {createNavLink("Interaction")}
+          {createNavHashLink("Contact")}
+        </Menu>
+      );
+    } else {
+      return (
+        <div>
+          {createNavHashLink("About")}
+          {createNavHashLink("Portfolio")}
+          {createNavHashLink("Knowledge")}
+          {createNavLink("Resume")}
+          {createNavLink("Interaction")}
+          {createNavHashLink("Contact")}
+        </div>
+      );
+    }
   }
 
   return (
@@ -55,19 +86,7 @@ function Nav() {
           <Logo id="logo" />
         </NavHashLink>
       </div>
-
-      <Menu
-        right
-        isOpen={menuOpen}
-        onStateChange={menuOpen => handleStateChange(menuOpen)}
-      >
-        {createNavHashLink("About")}
-        {createNavHashLink("Portfolio")}
-        {createNavHashLink("Knowledge")}
-        {createNavLink("Resume")}
-        {createNavLink("Interaction")}
-        {createNavHashLink("Contact")}
-      </Menu>
+      {createNav()}
     </NavDiv>
   );
 }
