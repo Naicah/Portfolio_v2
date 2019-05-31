@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import InputField from "./InputField";
 import { LinkButton } from "../General";
 import { useElementLocation } from "../../locationTracker";
+import { ContactDiv } from "./style.js";
 
 const inputs = [
   {
@@ -54,7 +55,7 @@ function Contact() {
   const anchorElement = useElementLocation();
   const [state, setInputFiledValue] = useSetInputFieldValue();
   return (
-    <div className="mainContainer" id="contact" ref={anchorElement}>
+    <ContactDiv className="mainContainer" id="contact" ref={anchorElement}>
       <h1>Contact</h1>
 
       <form className="contactForm" onSubmit={e => this.formSubmit(e)}>
@@ -71,7 +72,7 @@ function Contact() {
 
         <LinkButton type="submit" url="" text="Send" id="sendContactForm" />
       </form>
-    </div>
+    </ContactDiv>
   );
 }
 

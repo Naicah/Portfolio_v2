@@ -2,12 +2,13 @@ import React from "react";
 import { LinkButton } from "../General";
 import ReactTypingEffect from "react-typing-effect";
 import { useElementLocation } from "../../locationTracker";
+import { AboutDiv } from "./style.js";
 
 function About() {
   const anchorElement = useElementLocation();
 
   return (
-    <div className="mainContainer" id="about" ref={anchorElement}>
+    <AboutDiv className="mainContainer" id="about" ref={anchorElement}>
       <div className="headerQuoteContainer">
         <h1>About</h1>
         <div className="quote">
@@ -29,7 +30,7 @@ function About() {
             PROTAGONIST (ENFJ-T)
           </a>{" "}
           I seriously believe that nothing is impossible, which can sometimes be
-          a bit dangerous. Once I get exhited about something there is no
+          a bit dangerous. Once I get excited about something there is no
           stopping me.
         </p>
 
@@ -45,23 +46,22 @@ function About() {
         <p>
           Before I knew how to develop websites and applications I used Excel to
           build the tools that I wanted, which means that I (on my own) have
-          learnt how use Excel in many different, and sometimes not the most
+          learned how to use Excel in many different, and sometimes not the most
           common, ways. I, for example, built a 'program' for keeping track of
           work orders and work load in a big team. So as you can tell, I truly
           believe that everything is possible, you just have to find the right
           way.
         </p>
         <p>
-          So weither you want help making an idea reality, update something
-          existing or learn, I am here for you! I love to create, toss around
-          ideas and teach. So weither it is something web based, excel, dance or
-          even sewing that you have on your mind, let me know!
+          So whether you want help making a idea reality, update or improve
+          something existing, or learn, I am here for you! I love to create,
+          toss around ideas and teach.
         </p>
       </div>
       <div id="linkButtonToContact">
         <LinkButton url="/#contact" text="Let' s talk!" />
       </div>
-    </div>
+    </AboutDiv>
   );
 }
 

@@ -1,17 +1,17 @@
 import React from "react";
-import Experience from "./Experience.js";
-import Skills from "./Skills.js";
-import TreeHouseAPI from "./TreeHouseAPI.js";
+import Experience from "./Experience";
+import Skills from "./Skills";
+import TreeHouseAPI from "./TreeHouseAPI";
 import { LinkButton } from "../General";
 import { useElementLocation } from "../../locationTracker";
-
-import { experiences } from "../../database.js";
+import { experiences } from "../../database";
+import { KnowledgeDiv } from "./style";
 
 function Knowledge() {
   const anchorElement = useElementLocation();
 
   return (
-    <div className="mainContainer" id="knowledge" ref={anchorElement}>
+    <KnowledgeDiv className="mainContainer" id="knowledge" ref={anchorElement}>
       <h1>Knowledge</h1>
       <div className="skillsExperienceContainer">
         <div id="skillsContainer">
@@ -30,7 +30,7 @@ function Knowledge() {
         </div>
       </div>
       <LinkButton url="Resume" text="See full resumé" id="linkButtonToResume" />
-    </div>
+    </KnowledgeDiv>
   );
 }
 

@@ -1,9 +1,29 @@
 import styled from "styled-components";
 
+// =========================================== //
+//                TECHNIQUE ICON               //
+// =========================================== //
+export const TechniqueIconDiv = styled.div`
+  color: var(--color-dark-1);
+  font-size: var(--font-size-m);
+  padding: 0.2em;
+
+  .tooltip .tooltiptext {
+    width: 90px;
+  }
+`;
+
+// =========================================== //
+//                 PROJECT CARD                //
+// =========================================== //
 export const ProjectCardDiv = styled.div`
   margin: 2em auto;
   max-width: 80%;
   height: 35vh;
+
+  h3 {
+    font-size: var(--font-size-m);
+  }
 
   /*- Card body -*/
   .card-body {
@@ -89,5 +109,22 @@ export const ProjectCardDiv = styled.div`
     margin: 1%;
     min-width: 23%;
     max-width: 23%;
+
+    h3 {
+      font-size: var(--font-size-l);
+    }
+  }
+`;
+
+// =========================================== //
+//                  PORTFOLIO                  //
+// =========================================== //
+export const PortfolioDiv = styled.div`
+  @media only screen and (min-width: 768px) {
+    #portfolioCardContainer {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+    }
   }
 `;

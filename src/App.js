@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-// Style sheets
 import "./App.css";
-import "./Components/About/about.css";
-import "./Components/Knowledge/knowledge.css";
-import "./Components/Contact/contact.css";
 
 // App components
 import { Nav, Footer, Main } from "./Components/General";
 import Resume from "./Components/Resume";
-import { Theme, themes } from "./Components/Theme";
+import { Theme } from "./Components/Theme";
+import { themes } from "./database";
 const themeLocalStorageKey = "themeLocalStorageKey";
 
 class App extends Component {

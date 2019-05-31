@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+// =========================================== //
+//                      NAV                    //
+// =========================================== //
 export const NavDiv = styled.div`
   display: flex;
   justify-content: space-between;
@@ -67,9 +70,9 @@ export const NavDiv = styled.div`
   }
 
   /*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
 
   .bm-menu-wrap {
     position: fixed;
@@ -124,6 +127,64 @@ Note: Beware of modifying this element as it can break the animations - you shou
         height: 99%;
         align-items: center;
       }
+    }
+  }
+`;
+
+// =========================================== //
+//                     FOOTER                  //
+// =========================================== //
+
+export const FooterDiv = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  width: 100%;
+  height: 8em;
+  font-size: var(--font-size-xs);
+  background-color: var(--color-dark-1);
+
+  * {
+    color: var(--color-light-1);
+  }
+
+  .copyright {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-content: space-around;
+    padding: 1em;
+    width: 75%;
+  }
+  .links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 1em;
+    width: 25%;
+  }
+  .tooltiptext {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: var(--font-size-s);
+    .copyright {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-end;
+      align-content: space-around;
+      padding: 1em;
+      width: 90%;
+    }
+    .links {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      padding: 0.5em;
+      width: 10%;
+      font-size: var(--font-size-l);
     }
   }
 `;

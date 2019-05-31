@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../../database";
 import { useElementLocation } from "../../locationTracker";
+import { PortfolioDiv } from "./style.js";
 
 function Portfolio() {
   const anchorElement = useElementLocation();
 
   return (
-    <div className="mainContainer" id="portfolio" ref={anchorElement}>
+    <PortfolioDiv className="mainContainer" id="portfolio" ref={anchorElement}>
       <h1>Portfolio</h1>
 
       <div id="portfolioCardContainer">
@@ -16,7 +17,7 @@ function Portfolio() {
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
-    </div>
+    </PortfolioDiv>
   );
 }
 

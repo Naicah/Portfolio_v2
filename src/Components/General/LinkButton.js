@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 export const LinkButtonDiv = styled.div`
   background-color: var(--color-accent);
-
   padding: 0.5em;
-
-  border: 3px solid var(--color-accent);
-
   text-align: center;
 
   a {

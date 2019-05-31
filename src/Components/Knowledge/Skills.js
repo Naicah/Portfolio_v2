@@ -1,23 +1,22 @@
 import React from "react";
-import styled from "styled-components";
-import CodeSkill from "./CodeSkill.js";
 import { codeSkills } from "../../database";
+import { CodeSkillDiv, SkillsDiv } from "./style";
 
-export const SkillsDiv = styled.div`
-  padding: 1.5em 1em;
-  .codeSkillsContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-
-  @media only screen and (min-width: 768px) {
-    padding: 0.5em;
-    .codeSkillsContainer {
-      margin-top: 1em;
-    }
-  }
-`;
+function CodeSkill({ icon, main, styles }) {
+  return (
+    <CodeSkillDiv>
+      <div>
+        <i className={icon} />
+      </div>
+      <div>
+        <p className="codeSkillMain">{main}</p>
+      </div>
+      <div>
+        <p className="codeSkillStyles">{styles}</p>
+      </div>
+    </CodeSkillDiv>
+  );
+}
 
 function Skills() {
   return (

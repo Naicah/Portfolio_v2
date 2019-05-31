@@ -5,4 +5,4 @@ import Nav from "./Nav";
 import Logo from "./Logo";
 import Main from "./Main";
 
-export { LinkButton, LinkIcon, Footer, Nav, Logo, Main };
+export { Footer, LinkButton, LinkIcon, Logo, Main, Nav };
