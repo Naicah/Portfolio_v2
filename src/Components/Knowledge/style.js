@@ -67,7 +67,7 @@ export const KnowledgeDiv = styled.div`
       display: flex;
       flex-flow: column wrap;
       align-items: center;
-      height: 100vh;
+      height: 70vh;
     }
     #linkButtonToResume {
       max-width: 15vw;

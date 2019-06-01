@@ -29,7 +29,7 @@ function Knowledge() {
             ))}
         </div>
       </div>
-      <LinkButton url="Resume" text="See full resumé" id="linkButtonToResume" />
+      <LinkButton url="Resume" text="See full resume" id="linkButtonToResume" />
     </KnowledgeDiv>
   );
 }
