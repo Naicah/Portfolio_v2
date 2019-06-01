@@ -48,8 +48,8 @@ export const AboutDiv = styled.div`
       width: 33%;
 
       .lfm__typing_effect {
-        max-width: 20vw;
-        min-height: 13vh;
+        max-width: 16vw;
+        min-height: 11vh;
         margin: 0;
       }
     }
