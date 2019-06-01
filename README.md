@@ -7,15 +7,23 @@ Requirements: To create a responsive portfolio that includes an API and is built
 ### Home
 Uses [react-burger-menu](https://github.com/negomi/react-burger-menu) (Licence MIT) for the navigation bar on small devices.
 
+![Demo of home section](./src/Media/readme/demo_home.gif?raw=true "Home")
+![Demo of home section on phone](./src/Media/readme/demo_home_phone.gif?raw=true "Home on phone")
+
 ### About
 This section includes a quote that describes my mindset very well, and is animated with [react-typing-effect](https://github.com/lamyfarai/react-typing-effect).
+
 ![Demo of about section](./src/Media/readme/demo_about.gif?raw=true "About")
 
 ### Portfolio
 The portfolio displays my projects and shows short information, techniques, links to live version and GitHub repository and the option to read more about each project (will be added soon). Flip animation made by [Alex Devero](https://codepen.io/alexdevero/pen/pRjNmW)
 
+![Demo of portfolio section](./src/Media/readme/demo_portfolio.gif?raw=true "Portfolio")
+
 ### Knowledge
 Shows code skills, Treehouse achievements and IT related sections from my resume and link to full resume (will be added soon)
+
+![Demo of knowledge section](./src/Media/readme/demo_knowledge.gif?raw=true "Knowledge")
 
 #### API
 I decided to use the learning platform Treehouse's API to be able to display all the achievements I have there, which is both points within different areas and badges for different courses and skills. Treehouse stores each badge separate though and includes information for each badge about which course it belongs to. I decided to extract and display this information differently so that thebadges are grouped by course.
@@ -26,8 +34,12 @@ I decided to use the learning platform Treehouse's API to be able to display all
 ### Theme
 A interactive section where the user can choose that theme and color pallet the application should be. Chosen theme is saved to local storage and is otherwise set to default. This also changes the image on the home page.
 
+![Demo of theme section](./src/Media/readme/demo_theme.gif?raw=true "Theme")
+
 ### Contact
 Form to contact med, animated with [YOKO](https://tympanus.net/Development/TextInputEffects/index.html). (Not yet possible to send form, will be added soon)
+
+![Demo of contact section](./src/Media/readme/demo_contact.gif?raw=true "About")
 
 #
 ## Upcoming features
