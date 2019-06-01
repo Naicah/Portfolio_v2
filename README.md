@@ -1,7 +1,55 @@
 # Portfolio version 2
 
 Portfolio created as an individual project at Front End Developer education at [KYH](https://kyh.se/utbildningar/front-end-developer/) in Stockholm, Sweden. <br>
-Requirements: React and API
+Requirements: To create a responsive portfolio that includes an API and is built using React
+#
+
+### Home
+Uses [react-burger-menu](https://github.com/negomi/react-burger-menu) (Licence MIT) for the navigation bar on small devices.
+
+### About
+This section includes a quote that describes my mindset very well, and is animated with [react-typing-effect](https://github.com/lamyfarai/react-typing-effect).
+
+### Portfolio
+The portfolio displays my projects and shows short information, techniques, links to live version and GitHub repository and the option to read more about each project (will be added soon). Flip animation made by [Alex Devero](https://codepen.io/alexdevero/pen/pRjNmW)
+
+### Knowledge
+Shows code skills, Treehouse achievements and IT related sections from my resume and link to full resume (will be added soon)
+
+#### API
+I decided to use the learning platform Treehouse's API to be able to display all the achievements I have there, which is both points within different areas and badges for different courses and skills. Treehouse stores each badge separate though and includes information for each badge about which course it belongs to. I decided to extract and display this information differently so that thebadges are grouped by course.
+
+### Resume
+*Will be added soon*
+
+### Theme
+A interactive section where the user can choose that theme and color pallet the application should be. Chosen theme is saved to local storage and is otherwise set to default. This also changes the image on the home page.
+
+### Contact
+Form to contact med, animated with [YOKO](https://tympanus.net/Development/TextInputEffects/index.html). (Not yet possible to send form, will be added soon)
+
+#
+## Upcoming features
+
+#### Portfolio
+* Detailed information about each project on separate page, easy to switch between projects and get back to main page. Detailed information about purpose, workflow, result and difficulties and demos.
+
+#### Resume
+* Full resume with posibility to filter on jobs, education, extra and type (such as IT)
+* Skills and achievements that are displayed in *Knowledge* 
+* Languages I speak
+* Characteristics
+* References
+* Posibility to save/print resume
+
+#### Theme
+* Posibility to choose own color pallet with color picker
+* Posibility to upload own picture to Home page
+* Posibility to automatically extract color pallet from uploaded image
+
+#### Contact
+* Information in form is sent by email to me
+* Confirmation message upon sent message
 
 #
 
