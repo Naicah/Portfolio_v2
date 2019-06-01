@@ -9,6 +9,7 @@ Uses [react-burger-menu](https://github.com/negomi/react-burger-menu) (Licence M
 
 ### About
 This section includes a quote that describes my mindset very well, and is animated with [react-typing-effect](https://github.com/lamyfarai/react-typing-effect).
+![Demo of about section](./src/Media/readme/demo_about.gif?raw=true "About")
 
 ### Portfolio
 The portfolio displays my projects and shows short information, techniques, links to live version and GitHub repository and the option to read more about each project (will be added soon). Flip animation made by [Alex Devero](https://codepen.io/alexdevero/pen/pRjNmW)
